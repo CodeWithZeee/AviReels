@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
+  --background: #efebe5;
   --foreground: #171717;
 }
 
@@ -12,15 +12,37 @@
   --font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
+/* @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
+    --background: #f5efc5;
     --foreground: #ededed;
   }
-}
+} */
 
 body {
   background: var(--background);
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
+}
+
+/* Navbar underline animation */
+.underline-style {
+  @apply pointer-events-none absolute left-0 -bottom-1 h-0.5 w-4/5 bg-current origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100;
+}
+
+h1{
+  font-size: 40px;
+}
+
+:root {
+  --font-gilroy: 'Gilroy', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+}
+
+html[class*="--font-gilroy"] {
+  /* when you use next/font with variable, you already have a CSS variable set on :root via the class.
+     But simplest: just set body to use the var defined in layout.js: */
+}
+
+body {
+  font-family: var(--font-gilroy), Arial, Helvetica, sans-serif;
 }
