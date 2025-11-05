@@ -38,6 +38,10 @@ h1{
   --font-gilroy: 'Gilroy', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
+.gilroy {
+  font-family: var(--font-gilroy), Arial, Helvetica, sans-serif;
+}
+
 html[class*="--font-gilroy"] {
   /* when you use next/font with variable, you already have a CSS variable set on :root via the class.
      But simplest: just set body to use the var defined in layout.js: */
@@ -51,8 +55,4 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
-}
-
-span{
-  font-weight: bold;
 }

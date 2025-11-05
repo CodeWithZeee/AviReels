@@ -5,6 +5,8 @@ import OurMission from './components/OurMission'
 import ClientResults from './components/ClientResults'
 import ClientResults2 from './components/ClientResult2'
 import HWW from './components/HWW'
+import TheDifference from './components/TheDifference'
+import Accordion from './components/FAQ'
 
 const page = () => {
   return (
@@ -15,6 +17,8 @@ const page = () => {
       <ClientResults />
       <ClientResults2 />
       <HWW />
+      <TheDifference />
+      <Accordion />
     </div>
   )
 }
