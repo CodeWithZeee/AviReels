@@ -46,3 +46,13 @@ html[class*="--font-gilroy"] {
 body {
   font-family: var(--font-gilroy), Arial, Helvetica, sans-serif;
 }
+
+.centerit{
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+span{
+  font-weight: bold;
+}

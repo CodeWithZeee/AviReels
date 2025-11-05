@@ -1,3 +1,4 @@
+"use client";
 import React from "react";
 import BasicChips from "./ui/Chip";
 
