@@ -31,7 +31,11 @@ body {
 }
 
 h1{
-  font-size: 40px;
+  font-size: clamp(24px, 4vw, 40px);
+}
+
+h2{
+  font-size: clamp(16px, 2.5vw, 20px);
 }
 
 :root {

@@ -24,7 +24,6 @@ const Navbar = () => {
       name: "Privacy",
       href: "/#Privacy",
     },
-
   ];
 
   const toggleMenu = () => {
@@ -33,15 +32,15 @@ const Navbar = () => {
 
   return (
     <nav className="relative">
-      <div className="mx-4 sm:mx-6 lg:mx-10 my-5 bg-transparent backdrop-blur rounded-3xl h-16 flex items-center px-4 overflow-hidden fixed top-0 left-0 right-0 z-50">
+      <div className="mx-2 sm:mx-4 lg:mx-10 my-2 sm:my-4 lg:my-5 bg-transparent backdrop-blur rounded-2xl sm:rounded-3xl h-14 sm:h-16 flex items-center px-2 sm:px-4 overflow-hidden fixed top-0 left-0 right-0 z-50">
         <Image
           src="/Logo.png"
           alt="Astrix Digital Media"
           width={70}
           height={150}
-          className="h-18  w-auto object-contain"
+          className="h-12 sm:h-16 w-auto object-contain"
         />
-        <p className="text-2xl">AviReels</p>
+        <p className="text-lg sm:text-xl lg:text-2xl ml-1 sm:ml-2">AviReels</p>
 
         {/* Desktop Navigation */}
         <div className="hidden lg:flex mx-10 ml-auto items-center gap-4">
@@ -66,14 +65,14 @@ const Navbar = () => {
         >
           <div className="relative w-6 h-6">
             <Menu
-              className={`h-6 w-6 text-white transition-all duration-300 absolute ${
+              className={`h-6 w-6 text-black transition-all duration-300 absolute ${
                 isMenuOpen
                   ? "opacity-0 rotate-180 scale-0"
                   : "opacity-100 rotate-0 scale-100"
               }`}
             />
             <X
-              className={`h-6 w-6 text-white transition-all duration-300 absolute ${
+              className={`h-6 w-6 text-black transition-all duration-300 absolute ${
                 isMenuOpen
                   ? "opacity-100 rotate-0 scale-100"
                   : "opacity-0 -rotate-180 scale-0"
@@ -89,7 +88,7 @@ const Navbar = () => {
 
       {/* Mobile Navigation */}
       <div
-        className={`mobile-menu lg:hidden transition-all duration-300 ease-in-out ${
+        className={`mobile-menu lg:hidden fixed top-20 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg transition-all duration-300 ease-in-out z-40 ${
           isMenuOpen
             ? "opacity-100 translate-y-0 pointer-events-auto"
             : "opacity-0 -translate-y-4 pointer-events-none"
@@ -101,7 +100,7 @@ const Navbar = () => {
               <Link
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-4 py-3 text-white hover:bg-white/10 rounded-lg transition-colors"
+                className="block px-4 py-3 text-black hover:bg-black/10 rounded-lg transition-colors"
               >
                 {link.name}
               </Link>
@@ -112,7 +111,7 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`mobile-menu-overlay lg:hidden transition-opacity duration-300 ease-in-out ${
+        className={`mobile-menu-overlay lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ease-in-out z-30 ${
           isMenuOpen
             ? "opacity-100 pointer-events-auto"
             : "opacity-0 pointer-events-none"

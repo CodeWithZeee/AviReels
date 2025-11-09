@@ -1,24 +1,25 @@
 // components/ProcessFlow.jsx
 import { FaSearch, FaPlus, FaEdit, FaPaperPlane } from "react-icons/fa";
 
+// Use icon components (not JSX) in module scope to avoid rendering JSX during module evaluation.
 const steps = [
   {
-    icon: <FaSearch className="text-4xl text-white" />,
+    icon: FaSearch,
     title: "Research & Script",
-    desc: "We identify what’s trending and tailor it to your niche.",
+    desc: "We identify what's trending and tailor it to your niche.",
   },
   {
-    icon: <FaPlus className="text-4xl text-white" />,
+    icon: FaPlus,
     title: "Create & Animate",
     desc: "Realistic avatars + animated visuals bring your story to life.",
   },
   {
-    icon: <FaEdit className="text-4xl text-white" />,
+    icon: FaEdit,
     title: "Edit & Optimize",
     desc: "Every second refined for retention and impact.",
   },
   {
-    icon: <FaPaperPlane className="text-4xl text-white" />,
+    icon: FaPaperPlane,
     title: "Deliver & Post",
     desc: "Ready-to-upload, platform-optimized content.",
   },
@@ -26,7 +27,7 @@ const steps = [
 
 export default function ProcessFlow() {
   return (
-    <div className="relative  py-16 px-6">
+    <div className="relative py-8 sm:py-12 lg:py-16 px-4 sm:px-6">
       {/* Curvy Line (for large screens) */}
       <div className="hidden lg:block absolute top-1/2 left-0 w-full h-0.5 bg-transparent">
         <svg
@@ -43,16 +44,24 @@ export default function ProcessFlow() {
         </svg>
       </div>
 
-      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-12 lg:gap-0 max-w-6xl mx-auto">
+      <div className="relative z-10 flex flex-col lg:flex-row items-center justify-between gap-8 sm:gap-12 lg:gap-0 max-w-6xl mx-auto">
         {steps.map((step, index) => (
-          <div key={index} className="text-center flex flex-col items-center">
-            <div className="bg-black p-6 rounded-3xl mb-6 w-24 h-24 flex items-center justify-center shadow-lg">
-              {step.icon}
+          <div
+            key={index}
+            className="text-center flex flex-col items-center w-full sm:w-auto"
+          >
+            <div className="bg-black p-4 sm:p-6 rounded-3xl mb-4 sm:mb-6 w-20 h-20 sm:w-24 sm:h-24 flex items-center justify-center shadow-lg">
+              {(() => {
+                const Icon = step.icon;
+                return (
+                  <Icon className="text-2xl sm:text-3xl lg:text-4xl text-white" />
+                );
+              })()}
             </div>
-            <h3 className="text-2xl font-serif text-black mb-3">
+            <h3 className="text-xl sm:text-2xl font-serif text-black mb-2 sm:mb-3">
               {step.title}
             </h3>
-            <p className="text-gray-700 max-w-xs text-lg leading-relaxed">
+            <p className="text-gray-700 max-w-xs text-sm sm:text-base lg:text-lg leading-relaxed px-2">
               {step.desc}
             </p>
           </div>

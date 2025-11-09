@@ -13,6 +13,11 @@ const gilroy = localFont({
   display: 'swap', // optional: adjust font-display
 });
 
+export const metadata = {
+  title: 'AviReels - AI Videos That Tell & Sell',
+  description: 'We create ultra-realistic AI Videos and Reels featuring lifelike Avatars and Animated Characters',
+};
+
 export default function RootLayout({ children }) {
   return (
     <html lang="en" className={gilroy.variable}>
