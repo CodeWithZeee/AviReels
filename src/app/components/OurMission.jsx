@@ -1,45 +1,59 @@
-import React from "react";
-import BasicChips from "./ui/Chip";
-import Image from "next/image";
+import { Aperture } from "lucide-react";
 
-const OurMission = () => {
+export default function Mission() {
   return (
-    <div className="flex flex-col justify-center items-center px-4 py-8 lg:py-12">
-      <div className="h-full p-4 sm:p-6 w-full max-w-4xl bg-white rounded-2xl mt-4">
-        <BasicChips />
-        <br />
-        <h1 className="text-xl sm:text-2xl lg:text-3xl leading-tight">
-          <span className="font-bold">Transforming</span> Every Piece of{" "}
-          <span className="font-bold">Content</span> into Lasting{" "}
-          <span className="font-bold">Growth</span>
-        </h1>
-        <br />
-        <h2 className="text-sm sm:text-base lg:text-lg">
-          We help brands and content creators turn their ideas into powerful,
-          scroll-stopping videos that attract, engage, and convert.
-        </h2>
-        <br />
-        <h2 className="text-sm sm:text-base lg:text-lg">
-          Every piece of content we craft is built with strategy, storytelling,
-          and consistency — designed to grow your audience and your brand.
-        </h2>
-        <br />
-        <h2 className="text-sm sm:text-base lg:text-lg">
-          From creation to posting, we handle everything so you can focus on
-          what you do best.
-        </h2>
-        <div className="flex justify-center lg:justify-start">
-          <Image
-            src="/Logo.png"
-            alt="Logo"
-            width={150}
-            height={50}
-            className="mt-4"
-          />
+    <section className="bg-[#F4F2EC] px-6 py-24">
+      <div className="max-w-5xl mx-auto">
+        <div className="relative bg-[#FBFAF7] rounded-[3rem] px-8 sm:px-12 md:px-20 py-20 text-center shadow-sm">
+
+          {/* Floating Icon */}
+          <div className="absolute top-6 right-6 sm:top-10 sm:right-10 bg-black text-white p-3 rounded-2xl rotate-12">
+            <Aperture className="w-6 h-6" />
+          </div>
+
+          {/* Pill */}
+          <div className="inline-flex items-center justify-center bg-[#E5E2DC] px-5 py-2 rounded-full text-sm font-semibold text-black/80 mb-10">
+            Our mission
+          </div>
+
+          {/* Heading */}
+          <h2 className="text-[2.25rem] sm:text-[2.75rem] md:text-[3.25rem] lg:text-[3.75rem]
+                         leading-[1.15] font-semibold text-black mb-10">
+            Transforming Every <br />
+            Piece of Content into{" "}
+            <span className="font-serif italic font-normal">
+              Lasting Growth
+            </span>
+          </h2>
+
+          {/* Paragraphs */}
+          <div className="space-y-8 text-gray-500 text-base sm:text-lg leading-relaxed max-w-3xl mx-auto">
+            <p>
+              We help brands and content creators turn their ideas into powerful,
+              scroll-stopping videos that attract, engage, and convert.
+            </p>
+
+            <p>
+              Every piece of content we craft is built with strategy,
+              storytelling, and consistency designed to grow your audience and
+              your brand.
+            </p>
+
+            <p>
+              From creation to posting, we handle everything so you can focus on
+              what you do best.
+            </p>
+          </div>
+
+          {/* Brand Footer */}
+          <div className="pt-12 flex justify-center items-center gap-2">
+            <div className="bg-black text-white p-1 rounded-lg">
+              <Aperture className="w-4 h-4" />
+            </div>
+            <span className="font-bold text-lg">AviReels</span>
+          </div>
         </div>
       </div>
-    </div>
+    </section>
   );
-};
-
-export default OurMission;
+}

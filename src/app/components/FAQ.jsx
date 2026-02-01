@@ -1,32 +1,36 @@
-'use client';
+"use client";
 
-import { useState } from 'react';
+import { useState } from "react";
 
 const accordionData = [
   {
     id: 1,
-    title: 'BRANDING',
-    tags: ['#Figma', '#Sketch', '#Adobe', '#Invision', '#Protopie'],
-    content: 'We believe in the greater good, we strive to do something for people, we aim to make their lives easier and more enjoyable, we love businesses that keep this'
+    title: "BRANDING",
+    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
+    content:
+      "We believe in the greater good, we strive to do something for people, we aim to make their lives easier and more enjoyable, we love businesses that keep this",
   },
   {
     id: 2,
-    title: 'UX/UI DESIGN',
-    tags: ['#Figma', '#Sketch', '#Adobe', '#Invision', '#Protopie'],
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.'
+    title: "UX/UI DESIGN",
+    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   },
   {
     id: 3,
-    title: 'FRONTEND DEVELOPMENT',
-    tags: ['#Figma', '#Sketch', '#Adobe', '#Invision', '#Protopie'],
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.'
+    title: "FRONTEND DEVELOPMENT",
+    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
   },
   {
     id: 4,
-    title: 'BACKEND DEVELOPMENT',
-    tags: ['#Figma', '#Sketch', '#Adobe', '#Invision', '#Protopie'],
-    content: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.'
-  }
+    title: "BACKEND DEVELOPMENT",
+    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+  },
 ];
 
 export default function Accordion() {
@@ -40,7 +44,10 @@ export default function Accordion() {
     <>
       <section>
         <div className="container centerit flex-col">
-            <h1 className='gilroy'>Frequently Asked <span className='font-bold'>Questions</span></h1>
+          <h1 className="gilroy text-5xl font-bold text-center">
+            Frequently Asked {" "}
+            <span className="font-serif italic font-normal">Questions</span>
+          </h1>
           <div className="accordion">
             {accordionData.map((item) => (
               <div key={item.id} className="accordion-item">
@@ -59,7 +66,7 @@ export default function Accordion() {
                   </div>
                   <div className="icon-wrapper">
                     <svg
-                      className={`icon arrow-forward ${activeId === item.id ? 'hidden' : ''}`}
+                      className={`icon arrow-forward ${activeId === item.id ? "hidden" : ""}`}
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -70,7 +77,7 @@ export default function Accordion() {
                       <path d="M5 12h14M12 5l7 7-7 7" />
                     </svg>
                     <svg
-                      className={`icon arrow-down ${activeId === item.id ? '' : 'hidden'}`}
+                      className={`icon arrow-down ${activeId === item.id ? "" : "hidden"}`}
                       width="24"
                       height="24"
                       viewBox="0 0 24 24"
@@ -82,7 +89,9 @@ export default function Accordion() {
                     </svg>
                   </div>
                 </button>
-                <div className={`answer ${activeId === item.id ? 'active' : ''}`}>
+                <div
+                  className={`answer ${activeId === item.id ? "active" : ""}`}
+                >
                   <p>{item.content}</p>
                 </div>
                 <hr />
@@ -106,7 +115,7 @@ export default function Accordion() {
           display: flex;
           align-items: center;
           justify-content: center;
-          font-family: 'DM Sans', sans-serif;
+          font-family: "DM Sans", sans-serif;
           padding: 2rem 0;
         }
 

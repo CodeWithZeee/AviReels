@@ -14,7 +14,7 @@ const gilroy = localFont({
 });
 
 export const metadata = {
-  title: 'AviReels - AI Videos That Tell & Sell',
+  title: 'AviReels | AI Videos That Tell & Sell',
   description: 'We create ultra-realistic AI Videos and Reels featuring lifelike Avatars and Animated Characters',
 };
 

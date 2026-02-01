@@ -1,64 +1,100 @@
-import React from "react";
-import { X, Check } from "lucide-react";
+import { Check, X, Aperture } from "lucide-react";
 
-export default function AgencyComparison() {
-  const otherAgencies = [
-    "Monthly reporting only",
-    "Extra cost for editing and posting",
-    "Generic templates with no emotion",
-    "Long term contracts required",
-  ];
-
-  const avaReels = [
-    "Reporting in 24 hours",
-    "Everything included — from script to posting",
-    "Emotion-driven realistic AI videos crafted for you",
-    "Flexible, cancel-anytime monthly plans",
-  ];
-
+export default function Comparison() {
   return (
-    <div className="w-full py-12 px-4">
-      <div className="max-w-3xl mx-auto">
-        <div className="grid md:grid-cols-2 gap-6">
+    <section className="bg-[#F4F2EC] px-6 py-32">
+      <div className="max-w-7xl mx-auto">
+
+        {/* Header */}
+        <div className="text-center mb-24">
+          <div className="inline-flex items-center justify-center bg-[#E5E2DC] px-5 py-2 rounded-full text-sm font-semibold text-black/80 mb-8">
+            The difference
+          </div>
+
+          <h2 className="text-[2.75rem] sm:text-[3.5rem] md:text-[4.25rem]
+                         leading-[1.1] font-semibold text-black">
+            See why brands <br />
+            switch to{" "}
+            <span className="font-serif italic font-normal">
+              AviReels
+            </span>
+          </h2>
+        </div>
+
+        {/* Comparison Cards */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+
           {/* Other Agencies */}
-          <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
-            <h2 className="text-3xl md:text-4xl font-serif text-neutral-400 mb-6 md:mb-8">
+          <div className="bg-[#EBE9E4]/60 rounded-[2.5rem] p-10 md:p-12 opacity-70">
+            <h3 className="text-2xl font-bold text-[#A8A6A1] mb-10 text-center">
               Other Agencies
-            </h2>
-            <ul className="space-y-4">
-              {otherAgencies.map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <div className="shrink-0 w-7 h-7 rounded-full bg-neutral-400 flex items-center justify-center">
-                    <X className="w-4 h-4 text-white" strokeWidth={3} />
-                  </div>
-                  <span className="text-lg text-neutral-400 leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
+            </h3>
+
+            <ul className="space-y-6 text-[#9CA3AF] font-medium text-lg">
+              <li className="flex items-center gap-4">
+                <IconX /> Monthly reporting only
+              </li>
+              <li className="flex items-center gap-4">
+                <IconX /> Extra cost for editing & posting
+              </li>
+              <li className="flex items-center gap-4">
+                <IconX /> Generic templates with no emotion
+              </li>
+              <li className="flex items-center gap-4">
+                <IconX /> Long term contracts required
+              </li>
+              <li className="flex items-center gap-4">
+                <IconX /> Reporting in 24 hours
+              </li>
             </ul>
           </div>
 
-          {/* AvaReels */}
-          <div className="bg-white rounded-3xl p-6 md:p-8 shadow-lg">
-            <h2 className="text-3xl md:text-4xl font-serif text-neutral-900 mb-6 md:mb-8">
-              AvaReels
-            </h2>
-            <ul className="space-y-4">
-              {avaReels.map((item, index) => (
-                <li key={index} className="flex items-center gap-3">
-                  <div className="shrink-0 w-7 h-7 rounded-full bg-black flex items-center justify-center">
-                    <Check className="w-4 h-4 text-white" strokeWidth={3} />
-                  </div>
-                  <span className="text-lg text-neutral-900 leading-relaxed">
-                    {item}
-                  </span>
-                </li>
-              ))}
+          {/* AviReels */}
+          <div className="bg-[#FBFAF7] rounded-[2.5rem] p-10 md:p-12 shadow-sm">
+            <div className="flex items-center justify-center gap-3 mb-10">
+              <div className="bg-black text-white p-1 rounded-md">
+                <Aperture className="w-4 h-4" />
+              </div>
+              <h3 className="text-2xl font-bold">
+                AviReels
+              </h3>
+            </div>
+
+            <ul className="space-y-6 font-semibold text-black text-lg">
+              <li className="flex items-center gap-4">
+                <IconCheck /> Everything included from script to posting
+              </li>
+              <li className="flex items-center gap-4">
+                <IconCheck /> Emotion driven realistic AI videos
+              </li>
+              <li className="flex items-center gap-4">
+                <IconCheck /> Crafted specifically for you
+              </li>
+              <li className="flex items-center gap-4">
+                <IconCheck /> Flexible, cancel-anytime monthly plans
+              </li>
             </ul>
           </div>
+
         </div>
       </div>
+    </section>
+  );
+}
+
+/* Icon helpers */
+function IconX() {
+  return (
+    <div className="bg-[#9CA3AF] rounded-full p-1">
+      <X className="w-3 h-3 text-white" />
+    </div>
+  );
+}
+
+function IconCheck() {
+  return (
+    <div className="bg-black rounded-full p-1">
+      <Check className="w-3 h-3 text-white" />
     </div>
   );
 }

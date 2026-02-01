@@ -1,7 +1,7 @@
 @import "tailwindcss";
 
 :root {
-  --background: #efebe5;
+  --background: #F4F2EC;
   --foreground: #171717;
 }
 
@@ -30,13 +30,13 @@ body {
   @apply pointer-events-none absolute left-0 -bottom-1 h-0.5 w-4/5 bg-current origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100;
 }
 
-h1{
+/* h1{
   font-size: clamp(24px, 4vw, 40px);
-}
+} */
 
-h2{
+/* h2{
   font-size: clamp(16px, 2.5vw, 20px);
-}
+} */
 
 :root {
   --font-gilroy: 'Gilroy', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;

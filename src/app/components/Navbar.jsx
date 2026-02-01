@@ -17,13 +17,13 @@ const Navbar = () => {
       href: "/about",
     },
     {
-      name: "Pricing",
+      name: "Result",
       href: "/Pricing",
     },
-    {
-      name: "Privacy",
-      href: "/#Privacy",
-    },
+    // {
+    //   name: "Privacy",
+    //   href: "/#Privacy",
+    // },
   ];
 
   const toggleMenu = () => {
@@ -35,15 +35,15 @@ const Navbar = () => {
       <div className="mx-2 sm:mx-4 lg:mx-10 my-2 sm:my-4 lg:my-5 bg-transparent backdrop-blur rounded-2xl sm:rounded-3xl h-14 sm:h-16 flex items-center px-2 sm:px-4 overflow-hidden fixed top-0 left-0 right-0 z-50">
         <Image
           src="/Logo.png"
-          alt="Astrix Digital Media"
+          alt="Avi Reels"
           width={70}
           height={150}
           className="h-12 sm:h-16 w-auto object-contain"
         />
-        <p className="text-lg sm:text-xl lg:text-2xl ml-1 sm:ml-2">AviReels</p>
+        <p className="font-bold text-lg sm:text-xl lg:text-2xl ml-1 sm:ml-2 ">AviReels</p>
 
         {/* Desktop Navigation */}
-        <div className="hidden lg:flex mx-10 ml-auto items-center gap-4">
+        <div className="hidden font-semibold lg:flex mx-10 ml-auto items-center gap-4">
           <ul className="flex gap-8 space-x-4">
             {NavbarLinks.map((link) => (
               <li className="relative group cursor-pointer" key={link.name}>
@@ -54,6 +54,11 @@ const Navbar = () => {
               </li>
             ))}
           </ul>
+
+          {/* Button - Book a call */}
+          <button className="bg-black text-white p-2  rounded-4xl m-2 font-bold transition-all duration-300 ease-out
+         hover:-translate-y-1 hover:scale-105
+         hover:shadow-xl active:scale-100">Book a call</button>
         </div>
 
         {/* Mobile Menu Button */}
