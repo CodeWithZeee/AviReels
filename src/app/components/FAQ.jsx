@@ -56,7 +56,7 @@ export default function Accordion() {
                   onClick={() => toggleAccordion(item.id)}
                   aria-expanded={activeId === item.id}
                 >
-                  <div className="flex">
+                  <div className="flex p-10">
                     <h3>{item.title}</h3>
                     <ul>
                       {item.tags.map((tag, index) => (
@@ -67,8 +67,8 @@ export default function Accordion() {
                   <div className="icon-wrapper">
                     <svg
                       className={`icon arrow-forward ${activeId === item.id ? "hidden" : ""}`}
-                      width="24"
-                      height="24"
+                      width="38"
+                      height="38"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -78,8 +78,8 @@ export default function Accordion() {
                     </svg>
                     <svg
                       className={`icon arrow-down ${activeId === item.id ? "" : "hidden"}`}
-                      width="24"
-                      height="24"
+                      width="38"
+                      height="38"
                       viewBox="0 0 24 24"
                       fill="none"
                       stroke="currentColor"
@@ -145,7 +145,7 @@ export default function Accordion() {
           display: flex;
           align-items: center;
           justify-content: space-between;
-          padding: 1rem 0;
+          padding: 1rem 2.5rem;
           border: none;
           cursor: pointer;
           text-align: left;

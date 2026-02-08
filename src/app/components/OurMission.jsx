@@ -1,4 +1,5 @@
 import { Aperture } from "lucide-react";
+import Image from "next/image";
 
 export default function Mission() {
   return (
@@ -7,8 +8,14 @@ export default function Mission() {
         <div className="relative bg-[#FBFAF7] rounded-[3rem] px-8 sm:px-12 md:px-20 py-20 text-center shadow-sm">
 
           {/* Floating Icon */}
-          <div className="absolute top-6 right-6 sm:top-10 sm:right-10 bg-black text-white p-3 rounded-2xl rotate-12">
-            <Aperture className="w-6 h-6" />
+          <div className="absolute top-6 right-6 sm:top-10 sm:right-10 p-3 rounded-2xl rotate-12">
+            {/* <Aperture className="w-6 h-6" /> */}
+            <Image 
+                src="/Logo.png"
+                alt="Aperture Icon"
+                width={124}
+                height={124}
+              />
           </div>
 
           {/* Pill */}
@@ -47,10 +54,15 @@ export default function Mission() {
 
           {/* Brand Footer */}
           <div className="pt-12 flex justify-center items-center gap-2">
-            <div className="bg-black text-white p-1 rounded-lg">
-              <Aperture className="w-4 h-4" />
+            <div className=" p-1 rounded-lg">
+              <Image 
+                src="/logo.png"
+                alt="AviReels Logo"
+                width={154}
+                height={154}
+              />
             </div>
-            <span className="font-bold text-lg">AviReels</span>
+            {/* <span className="font-bold text-lg">AviReels</span> */}
           </div>
         </div>
       </div>

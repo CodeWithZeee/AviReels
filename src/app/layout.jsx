@@ -1,17 +1,18 @@
 import './globals.css';
 import localFont from 'next/font/local';
 import Navbar from './components/Navbar';
+import LenisProvider from './components/LenisProvider.tsx';
 
-const gilroy = localFont({
-  src: [
-    { path: '../../public/fonts/gilroy/Gilroy-Black.woff2', weight: '900', style: 'normal' },
-    { path: '../../public/fonts/gilroy/Gilroy-Bold.woff2',  weight: '700', style: 'normal' },
-    { path: '../../public/fonts/gilroy/Gilroy-Light.woff2', weight: '300', style: 'normal' },
-    // add others as needed
-  ],
-  variable: '--font-gilroy', // optional: exposes a CSS variable you can use
-  display: 'swap', // optional: adjust font-display
-});
+// const gilroy = localFont({
+//   src: [
+//     { path: '../../public/fonts/gilroy/Gilroy-Black.woff2', weight: '900', style: 'normal' },
+//     { path: '../../public/fonts/gilroy/Gilroy-Bold.woff2',  weight: '700', style: 'normal' },
+//     { path: '../../public/fonts/gilroy/Gilroy-Light.woff2', weight: '300', style: 'normal' },
+//     // add others as needed
+//   ],
+//   variable: '--font-gilroy', // optional: exposes a CSS variable you can use
+//   display: 'swap', // optional: adjust font-display
+// });
 
 export const metadata = {
   title: 'AviReels | AI Videos That Tell & Sell',
@@ -20,10 +21,12 @@ export const metadata = {
 
 export default function RootLayout({ children }) {
   return (
-    <html lang="en" className={gilroy.variable}>
+    <html lang="en" className={/*gilroy.variable*/""}>
       <body>
+        <LenisProvider>
         <Navbar />
         {children}
+        </LenisProvider>
         </body>
     </html>
   );
