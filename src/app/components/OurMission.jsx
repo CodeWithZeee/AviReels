@@ -56,7 +56,7 @@ export default function Mission() {
           <div className="pt-12 flex justify-center items-center gap-2">
             <div className=" p-1 rounded-lg">
               <Image 
-                src="/logo.png"
+                src="/Logo.png"
                 alt="AviReels Logo"
                 width={154}
                 height={154}
