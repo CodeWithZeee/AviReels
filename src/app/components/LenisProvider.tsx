@@ -9,12 +9,23 @@ type Props = {
 
 export default function LenisProvider({ children }: Props) {
   useEffect(() => {
+    // 📱 Touch devices (mobile / tablet)
+    const isTouchDevice =
+      window.matchMedia("(pointer: coarse)").matches;
+
+    // ♿ Accessibility: reduced motion
+    const prefersReducedMotion =
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    // 🚫 Do NOT enable Lenis in these cases
+    if (isTouchDevice || prefersReducedMotion) return;
+
+    // 🧈 Desktop smooth scrolling
     const lenis = new Lenis({
-      duration: 1.2,          // scroll speed (higher = slower)
+      duration: 1.2,
       easing: (t: number) =>
-        Math.min(1, 1.001 - Math.pow(2, -10 * t)), // smooth easing
+        Math.min(1, 1.001 - Math.pow(2, -10 * t)),
       smoothWheel: true,
-    //   smoothTouch: false,     // usually better off on desktop only
     });
 
     function raf(time: number) {
