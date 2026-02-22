@@ -30,11 +30,11 @@ body {
   height: auto;
 }
 
-@media (pointer: fine) {
+/* @media (pointer: fine) {
   body {
     overflow: hidden;
   }
-}
+} */
 
 /* Navbar underline animation */
 .underline-style {
