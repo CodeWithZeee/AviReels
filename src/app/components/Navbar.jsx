@@ -18,12 +18,12 @@ const Navbar = () => {
     },
     {
       name: "Result",
-      href: "/Pricing",
+      href: "/result",
     },
-    // {
-    //   name: "Privacy",
-    //   href: "/#Privacy",
-    // },
+    {
+      name: "Pricing",
+      href: "/pricing",
+    },
   ];
 
   const toggleMenu = () => {
@@ -40,26 +40,30 @@ const Navbar = () => {
           height={150}
           className="h-12 sm:h-16 w-auto object-contain"
         />
-        <p className="font-bold text-lg sm:text-xl lg:text-2xl ml-1 sm:ml-2 ">AviReels</p>
+        <p className="font-bold text-lg sm:text-xl lg:text-2xl ml-1 sm:ml-2 ">
+          AviReels
+        </p>
 
         {/* Desktop Navigation */}
-        <div className="hidden font-semibold lg:flex mx-10 ml-auto items-center gap-4">
-          <ul className="flex gap-8 space-x-4">
-            {NavbarLinks.map((link) => (
-              <li className="relative group cursor-pointer" key={link.name}>
-                <Link href={link.href}>
-                  <span className="text-xl">{link.name}</span>
-                  <span className="underline-style"></span>
-                </Link>
-              </li>
-            ))}
-          </ul>
+        <ul className="hidden font-semibold lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
+          {NavbarLinks.map((link) => (
+            <li className="relative group cursor-pointer" key={link.name}>
+              <Link href={link.href}>
+                <span className="text-xl">{link.name}</span>
+                <span className="underline-style"></span>
+              </Link>
+            </li>
+          ))}
+        </ul>
 
-          {/* Button - Book a call */}
-          <button className="bg-black text-white p-2  rounded-4xl m-2 font-bold transition-all duration-300 ease-out
+        {/* Button - Book a call */}
+        <button
+          className="hidden lg:block ml-auto bg-black text-white p-3 rounded-4xl m-2 font-bold transition-all duration-300 ease-out
          hover:-translate-y-1 hover:scale-105
-         hover:shadow-xl active:scale-100">Book a call</button>
-        </div>
+         hover:shadow-xl active:scale-100"
+        >
+          Book a call
+        </button>
 
         {/* Mobile Menu Button */}
         <button
