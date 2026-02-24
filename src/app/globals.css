@@ -53,6 +53,31 @@ body {
   --font-gilroy: 'Gilroy', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
 }
 
+/* PILL */
+
+.pill {
+  text-transform: uppercase;          /* uppercase */
+  display: inline-flex;               /* inline-flex */
+  align-items: center;                /* items-center */
+  justify-content: center;            /* justify-center */
+  
+  background-color: #E5E2DC;          /* bg-[#E5E2DC] */
+  
+  padding-left: 1.25rem;              /* px-5 (5 × 0.25rem = 1.25rem) */
+  padding-right: 1.25rem;
+  padding-top: 0.5rem;                /* py-2 (2 × 0.25rem = 0.5rem) */
+  padding-bottom: 0.5rem;
+  
+  border-radius: 9999px;              /* rounded-full */
+  
+  font-size: 0.875rem;                /* text-sm (14px) */
+  font-weight: 600;                   /* font-semibold */
+  
+  color: rgba(0, 0, 0, 0.7);          /* text-black/70 */
+  
+  margin-bottom: 2rem;                /* mb-8 (8 × 0.25rem = 2rem) */
+}
+
 .gilroy {
   font-family: var(--font-gilroy), Arial, Helvetica, sans-serif;
 }
@@ -66,4 +91,37 @@ html[class*="--font-gilroy"] {
   display: flex;
   justify-content: center;
   align-items: center;
+}
+
+
+
+/* Stat Wall */
+
+@keyframes scroll-left {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-scroll {
+  animation: scroll-left 35s linear infinite;
+}
+
+
+/* Social Proof Ribbon */
+
+@keyframes marquee {
+  0% {
+    transform: translateX(0%);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  animation: marquee 28s linear infinite;
 }

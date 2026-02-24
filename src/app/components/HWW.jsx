@@ -6,18 +6,18 @@ export default function HowWeWork() {
       <div className="max-w-7xl mx-auto text-center">
 
         {/* Pill */}
-        <div className="inline-flex items-center justify-center bg-[#E5E2DC] px-5 py-2 rounded-full text-sm font-semibold text-black/80 mb-16">
+        <div className="pill">
           How we work
         </div>
 
         {/* Heading */}
         <h2 className="text-[4rem] md:text-[5rem] leading-[1.1] font-semibold text-black mb-28">
-          We like to keep <br />
-          things{" "}
+          Built to Move at  <br />
+          {/* Distribution.{" "} */}
           <span className="font-serif italic font-normal">
-            nice
+            News Speed
           </span>{" "}
-          and simple
+          {/* and simple */}
         </h2>
 
         {/* Steps */}
@@ -30,32 +30,32 @@ export default function HowWeWork() {
           <Step
             icon={<Search className="w-6 h-6" />}
             title="Research & Script"
-            text="We identify what's trending and tailor it to your niche."
+            text="We scan your industry, identify trending narratives, and build scripts that position your brand at the center of the conversation. Strategy first, always."
           />
 
           {/* Step 2 */}
           <Step
             icon={<Wand2 className="w-6 h-6" />}
             title="Create & Animate"
-            text="Realistic avatars + animated visuals bring your story to life."
+            text="Your hyper-real AI avatar delivers the content. Indistinguishable from real. On-brand, every time. No recording sessions, no scheduling, no bad days on camera."
           />
 
           {/* Step 3 */}
           <Step
             icon={<Sliders className="w-6 h-6" />}
             title="Edit & Optimize"
-            text="Every second refined for retention and impact."
+            text="Every second of footage is refined for platform-native retention. Hook. Hold. Convert. Built for Reels, Shorts, TikTok, and LinkedIn from the ground up."
           />
 
           {/* Step 4 */}
           <Step
             icon={<UploadCloud className="w-6 h-6" />}
             title="Deliver & Post"
-            text="Ready-to-upload, platform-optimized content."
+            text="Ready to post, formatted for every platform, delivered on your schedule. We handle posting if you need it. You stay focused on running the company."
           />
         </div>
 
-        <p className="text-gray-600 text-center my-12 ">Delivery in 1-3 days. 100% done for you.</p>
+        <p className="text-gray-600 text-center my-12 ">Delivery in 1-3 days. Zero production lift on your end. The system runs. You grow.</p>
       </div>
     </section>
   );

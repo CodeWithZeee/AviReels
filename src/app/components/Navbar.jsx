@@ -40,7 +40,7 @@ const Navbar = () => {
           height={150}
           className="h-12 sm:h-16 w-auto object-contain"
         />
-        <p className="font-bold text-lg sm:text-xl lg:text-2xl ml-1 sm:ml-2 ">
+        <p className="font-semibold text-lg sm:text-xl lg:text-2xl ml-1 sm:ml-2 ">
           AviReels
         </p>
 

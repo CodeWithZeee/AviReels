@@ -48,6 +48,18 @@ export default function Hero() {
                 See Real Results
               </button>
             </div>
+
+            <div className="mt-6 flex justify-center">
+              <p className="text-sm md:text-base text-neutral-600 max-w-2xl text-center leading-relaxed">
+                Trusted by founders and fast-growing brands.
+                <span className="mx-2 font-semibold text-black">•</span>
+                <span className="">
+                  30-day pilot
+                </span>
+                <span className="mx-2 font-semibold text-black">•</span>
+                No long-term commitment required.
+              </p>
+            </div>
           </div>
 
           {/* RIGHT PHONE MOCKUP */}
