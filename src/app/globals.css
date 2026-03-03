@@ -41,13 +41,37 @@ body {
   @apply pointer-events-none absolute left-0 -bottom-1 h-0.5 w-4/5 bg-current origin-left scale-x-0 transition-transform duration-300 ease-out group-hover:scale-x-100;
 }
 
-/* h1{
-  font-size: clamp(24px, 4vw, 40px);
-} */
+/* ============================= */
+/* AviReels Typography System   */
+/* ============================= */
 
-/* h2{
-  font-size: clamp(16px, 2.5vw, 20px);
-} */
+.h1 {
+  font-family: "Clash Display", sans-serif;
+  font-weight: 600;
+
+  /* Responsive scaling */
+  font-size: clamp(3rem, 6vw, 4.75rem); /* ~7xl on large screens */
+
+  line-height: 1.02;
+  letter-spacing: -0.025em;
+  color: #111111;
+  text-align: center;
+}
+
+.clash{
+  font-family: "Clash Display", sans-serif;
+}
+
+.h2 {
+  font-family: var(--font-inter);
+  font-weight: 500;
+  font-size: clamp(1.25rem, 2vw, 1.75rem);
+  line-height: 1.4;
+  letter-spacing: -0.01em;
+  color: #444444;
+  text-align: center;
+  max-width: 800px;
+}
 
 :root {
   --font-gilroy: 'Gilroy', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
