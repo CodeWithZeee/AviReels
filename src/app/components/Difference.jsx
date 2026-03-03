@@ -1,5 +1,6 @@
 import { Check, X, Aperture } from "lucide-react";
 import Image from "next/image";
+import CostBreakdown from "./ui/CostBreakdown";
 
 export default function Comparison() {
   return (
@@ -15,9 +16,9 @@ export default function Comparison() {
             className="text-[2.75rem] sm:text-[3.5rem] md:text-[4.25rem]
                          leading-[1.1] font-semibold text-black"
           >
-            See why brands <br />
-            switch to{" "}
-            <span className="font-serif italic font-normal">AviReels</span>
+            The alternative costs more <br />
+            and delivers less.{" "}
+            {/* <span className="font-serif italic font-normal">AviReels</span> */}
           </h2>
         </div>
 
@@ -31,19 +32,28 @@ export default function Comparison() {
 
             <ul className="space-y-6 text-[#9CA3AF] font-medium text-lg">
               <li className="flex items-center gap-4">
-                <IconX /> Monthly reporting only
+                <IconX /> You film. They edit
               </li>
               <li className="flex items-center gap-4">
-                <IconX /> Extra cost for editing & posting
+                <IconX /> Slow production cycle
               </li>
               <li className="flex items-center gap-4">
-                <IconX /> Generic templates with no emotion
+                <IconX /> You manage posting and scheduling
               </li>
               <li className="flex items-center gap-4">
-                <IconX /> Long term contracts required
+                <IconX /> Content without distribution strategy
               </li>
               <li className="flex items-center gap-4">
-                <IconX /> Reporting in 24 hours
+                <IconX /> Volume without a clear business outcome
+              </li>
+              <li className="flex items-center gap-4">
+                <IconX /> Long-term contracts before you see results
+              </li>
+              <li className="flex items-center gap-4">
+                <IconX /> No AI. Higher cost per video
+              </li>
+              <li className="flex items-center gap-4">
+                <IconX /> Monthly reporting. Minimal iteration
               </li>
             </ul>
           </div>
@@ -65,20 +75,35 @@ export default function Comparison() {
 
             <ul className="space-y-6 font-semibold text-black text-lg">
               <li className="flex items-center gap-4">
-                <IconCheck /> Everything included from script to posting
+                <IconCheck />Fully managed. Zero lift on your side
               </li>
               <li className="flex items-center gap-4">
-                <IconCheck /> Emotion driven realistic AI videos
+                <IconCheck /> News-speed production. 1-3 day delivery
               </li>
               <li className="flex items-center gap-4">
-                <IconCheck /> Crafted specifically for you
+                <IconCheck /> Strategy-first content tied to business outcomes
               </li>
               <li className="flex items-center gap-4">
-                <IconCheck /> Flexible, cancel-anytime monthly plans
+                <IconCheck /> Hyper-real AI avatars. Indistinguishable from real
+              </li>
+              <li className="flex items-center gap-4">
+                <IconCheck /> Built-in distribution and platform optimization
+              </li>
+              <li className="flex items-center gap-4">
+                <IconCheck /> 30-day pilot before any long-term commitment
+              </li>
+              <li className="flex items-center gap-4">
+                <IconCheck /> Fraction of the cost of in-house production
+              </li>
+              <li className="flex items-center gap-4">
+                <IconCheck /> Iteration built in. Performance improves monthly.
               </li>
             </ul>
           </div>
         </div>
+
+        <CostBreakdown />
+
       </div>
     </section>
   );

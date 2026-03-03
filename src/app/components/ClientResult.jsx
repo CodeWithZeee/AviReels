@@ -20,7 +20,48 @@ const ClientResult = () => {
           { value: "$1K+/mo", label: "Recurring ad revenue" },
         ]}
       />
-      <ClientCard />
+
+      <ClientCard
+        platform="AI for Everybody: Instagram Reels"
+        titleLine1="7.73 Million Views."
+        titleLine2="Zero Ad Spend."
+        description="Built from scratch. No paid promotion. Just engineered content that kept going viral — video after video."
+        image="/Everybody.Ai.png"
+        stats={[
+          { value: "7.73M", label: "Views across 6 Reels" },
+          { value: "10,500+", label: "Organic followers" },
+          { value: "2.6M", label: "Top single Reel" },
+          { value: "1:736", label: "View-to-follower ratio" },
+        ]}
+        reverse
+      />
+
+      <ClientCard
+        platform="TrueMuslimWarrior: Instagram Threads"
+        titleLine1="376,000 Monthly Views."
+        titleLine2="30 Days."
+        description="We automated and managed their Threads presence entirely. In 30 days: 1,800 new followers, 376K views, and direct eBook sales from organic content alone."
+        image="/Everybody.Ai.png"
+        stats={[
+          { value: "376K", label: "Monthly views in month 1" },
+          { value: "+1,800", label: "New followers in 30 days" },
+          { value: "60/day", label: "New followers per day" },
+          { value: "Direct", label: "eBook revenue generated" },
+        ]}
+      />
+
+      <ClientCard
+        platform="AstrixDigitalMedia: AI Avatar Funnels"
+        titleLine1="AI Avatars"
+        titleLine2="That Book Calls."
+        description="We built AI avatar videos for their landing and sales pages. The result: higher dwell time, stronger trust at first impression, and a measurable increase in booked sales calls."
+        image="/Everybody.Ai.png"
+        stats={[
+          { value: "Calls", label: "Booked from avatar pages" },
+          { value: "100%", label: "Repeat client rate" }
+        ]}
+        reverse
+      />
     </div>
   );
 };

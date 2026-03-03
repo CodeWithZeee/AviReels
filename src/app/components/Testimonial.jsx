@@ -21,23 +21,25 @@ export default function Testimonial() {
                              leading-[1.15] font-semibold text-black">
                 Our AI reels performed better than any of our traditional ads —{" "}
                 <span className="font-serif italic font-normal">
-                  faster, smarter, and more affordable.
+                  faster, smarter, and more  and built for the platform.                   
                 </span>
               </h3>
-
+              
+                  
+              <h2 className="text-xl italic text-gray-500"> AviReels doesn't feel like an agency. It feels like infrastructure..</h2>
               {/* Author */}
               <div className="flex flex-wrap items-center gap-2 text-gray-500 font-medium">
                 <span className="font-semibold text-gray-600">
                   Marketing Team
                 </span>
-                <span className="text-gray-300">•</span>
-                <span>Astrix Media</span>
+                <span className="text-gray-600">•</span>
+                <span className="text-gray-600 font-semibold">Astrix Media</span>
               </div>
             </div>
 
             {/* RIGHT IMAGE */}
             <div className="w-full max-w-md mx-auto lg:mx-0">
-              <div className="relative aspect-[4/5] rounded-[2.5rem] overflow-hidden shadow-xl">
+              <div className="relative aspect-4/5 rounded-[2.5rem] overflow-hidden shadow-xl">
                 <Image
                   src="/AstrixLogo.png"
                   alt="Marketing meeting"

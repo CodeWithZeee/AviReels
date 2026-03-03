@@ -5,32 +5,74 @@ import { useState } from "react";
 const accordionData = [
   {
     id: 1,
-    title: "BRANDING",
+    title: "Are the AI avatars detectable?",
     tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
     content:
-      "We believe in the greater good, we strive to do something for people, we aim to make their lives easier and more enjoyable, we love businesses that keep this",
+      "The short answer: not in normal viewing conditions. Our avatars are produced using the most advanced AI generation available. In real-world use, on real platforms, at normal playback, they are indistinguishable from a real person on camera. We can show you a comparison before you commit.",
   },
   {
     id: 2,
-    title: "UX/UI DESIGN",
+    title: "Do we need to disclose that our content uses AI?",
     tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      "It depends on your jurisdiction and the platforms you publish on. Requirements vary, and they're evolving. We stay up to date on AI disclosure guidance and help you navigate compliance for your specific situation. Some clients disclose proactively as a transparency strategy — we can advise on that approach too.",
   },
   {
     id: 3,
-    title: "FRONTEND DEVELOPMENT",
+    title: "Who owns the content?",
     tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      "You do. Upon full payment, all delivered video content is yours under a perpetual license for the commercial purposes defined in your agreement.",
   },
   {
     id: 4,
-    title: "BACKEND DEVELOPMENT",
+    title: "What does \"fully managed\" actually mean?",
     tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
     content:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum.",
+      "It means you hand us a brief — or we build one from your goals — and we handle everything from there. Strategy, scripting, AI avatar production, editing, optimization, formatting, and delivery. Your team's only job is to review and approve.",
   },
+  {
+    id: 5,
+    title: "What platforms do you optimize for?",
+    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
+    content:
+      "Instagram Reels, YouTube Shorts, TikTok, LinkedIn, and Threads. Every video is formatted natively for the platforms in your plan — aspect ratio, caption style, hook structure, and length are all tuned per platform.",
+  },
+  {
+    id: 6,
+    title: "How fast is turnaround?",
+    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
+    content:
+      "Standard delivery is 1-3 business days per video from approved script. For urgent newsjacking or time-sensitive content, we offer priority turnaround on Growth and Enterprise plans.",
+  },
+  {
+    id: 7,
+    title: "Can you use our executive's actual likeness?",
+    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
+    content:
+      "Yes — on Enterprise plans, we create a custom AI avatar based on your executive or brand spokesperson's likeness. This requires proper consent documentation, which we handle as part of onboarding.",
+  },
+  {
+    id: 8,
+    title: "What industries do you specialize in?",
+    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
+    content:
+      "We've produced high-performing content across B2B SaaS, financial content, e-commerce, automotive, digital media, and creator brands. The system adapts to the niche — the production quality and speed stay constant.",
+  },
+  {
+    id: 9,
+    title: "What if we need edits?",
+    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
+    content:
+      "Revisions are included. If a delivered video doesn't match the approved brief, we fix it. We actively encourage feedback — every note makes the system sharper.",
+  },
+  {
+    id: 10,
+    title: "How do we get started?",
+    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
+    content:
+      "Book a strategy call. We'll learn your goals, your brand, and your competitive landscape. From there we scope your engagement. If it's a fit, we start with a 30-day pilot — no long-term commitment required until you see the system working.",
+  }
 ];
 
 export default function Accordion() {

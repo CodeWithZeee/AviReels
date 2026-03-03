@@ -14,7 +14,7 @@ export default function Stat({ value, label }) {
           setHasAnimated(true);
         }
       },
-      { threshold: 0.6 }
+      { threshold: 0.6 },
     );
 
     if (ref.current) observer.observe(ref.current);
@@ -33,7 +33,7 @@ export default function Stat({ value, label }) {
     const numericPart = parseFloat(numberMatch[0]);
     const prefix = value.substring(0, value.indexOf(numberMatch[0]));
     const suffix = value.substring(
-      value.indexOf(numberMatch[0]) + numberMatch[0].length
+      value.indexOf(numberMatch[0]) + numberMatch[0].length,
     );
 
     let multiplier = 1;
@@ -67,9 +67,14 @@ export default function Stat({ value, label }) {
   };
 
   return (
-    <div ref={ref} className="bg-gray-200 rounded-2xl p-8 border border-neutral-200">
-      <div className="text-4xl font-bold mb-2">{displayValue}</div>
-      <div className="text-xs uppercase tracking-wide text-neutral-500 font-semibold">
+    <div
+      ref={ref}
+      className="bg-gray-200 rounded-2xl p-5 sm:p-6 lg:p-8 border border-neutral-200"
+    >
+      <div className="text-2xl sm:text-3xl lg:text-4xl font-bold mb-1 sm:mb-2 wrap-break-word">
+        {displayValue}
+      </div>
+      <div className="text-[10px] sm:text-xs uppercase tracking-wide text-neutral-500 font-semibold">
         {label}
       </div>
     </div>
