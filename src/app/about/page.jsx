@@ -231,25 +231,40 @@ export default function AboutPage() {
             </div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 gap-6 lg:gap-8 w-full">
-            {[
-              { step: "Step 1", title: "Strategy Alignment", desc: "We learn your brand, your voice, your competitive landscape, and your goals. We define your content pillars, your tone, and the narratives that will build authority in your category." },
-              { step: "Step 2", title: "Content Engine Build", desc: "We build your AI avatar, establish your production workflow, and set your content calendar. From this point, we move at news speed." },
-              { step: "Step 3", title: "Production & Optimization", desc: "We script, produce, and refine every video. AI avatars that are indistinguishable from real. Content engineered for platform-native retention, not just aesthetics." },
-              { step: "Step 4", title: "Distribution & Iteration", desc: "We post, monitor, analyze, and adjust. Every piece of content becomes data. Every iteration makes the next one sharper." }
-            ].map((card, idx) => (
-              <motion.div
-                key={idx}
-                variants={fadeUp}
-                whileHover={{ y: -8, scale: 1.01 }}
-                className="bg-[#171717] text-white p-8 md:p-10 rounded-[2rem] shadow-xl border border-white/5 relative overflow-hidden group transition-all duration-300"
-              >
-                <div className="absolute inset-0 bg-gradient-to-br from-white/10 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-                <div className="text-xs font-bold uppercase tracking-[0.2em] text-gray-400 mb-4">{card.step}</div>
-                <h3 className="text-2xl md:text-3xl font-bold clash mb-4 text-white group-hover:text-[#F4F2EC] transition-colors">{card.title}</h3>
-                <p className="text-gray-400 text-lg leading-relaxed mix-blend-luminosity">{card.desc}</p>
-              </motion.div>
-            ))}
+          <div className="relative max-w-5xl mx-auto mt-12 md:mt-20 w-full">
+            <div className="absolute left-8 md:left-1/2 top-0 bottom-0 w-[2px] bg-black/10 md:-translate-x-1/2" />
+            <div className="space-y-12 md:space-y-0 relative">
+              {[
+                { step: "Step 1", title: "Strategy Alignment", desc: "We learn your brand, your voice, your competitive landscape, and your goals. We define your content pillars, your tone, and the narratives that will build authority in your category." },
+                { step: "Step 2", title: "Content Engine Build", desc: "We build your AI avatar, establish your production workflow, and set your content calendar. From this point, we move at news speed." },
+                { step: "Step 3", title: "Production & Optimization", desc: "We script, produce, and refine every video. AI avatars that are indistinguishable from real. Content engineered for platform-native retention, not just aesthetics." },
+                { step: "Step 4", title: "Distribution & Iteration", desc: "We post, monitor, analyze, and adjust. Every piece of content becomes data. Every iteration makes the next one sharper." }
+              ].map((card, idx) => {
+                const isEven = idx % 2 === 0;
+                return (
+                  <motion.div
+                    key={idx}
+                    variants={fadeUp}
+                    className={`relative flex flex-col md:flex-row items-start md:items-center w-full ${isEven ? 'md:flex-row-reverse' : ''}`}
+                  >
+                    <div className="hidden md:block w-1/2 px-8 lg:px-12" />
+
+                    <div className="absolute left-[26px] md:left-1/2 top-10 md:top-1/2 -translate-y-1/2 -translate-x-1/2 w-4 h-4 rounded-full bg-black ring-4 ring-[var(--background)] z-10" />
+
+                    <div className="w-full md:w-1/2 pl-20 md:pl-0 px-4 md:px-8 lg:px-12 py-4">
+                      <motion.div
+                        whileHover={{ y: -5, boxShadow: "0 20px 40px rgba(0,0,0,0.08)" }}
+                        className="bg-white p-8 md:p-10 rounded-[2rem] shadow-sm border border-black/5 relative transition-all duration-300"
+                      >
+                        <div className="text-xs font-bold uppercase tracking-[0.2em] text-gray-500 mb-3">{card.step}</div>
+                        <h3 className="text-2xl lg:text-3xl font-bold clash mb-3 text-[#111111]">{card.title}</h3>
+                        <p className="text-gray-600 text-base md:text-lg leading-relaxed gilroy font-medium">{card.desc}</p>
+                      </motion.div>
+                    </div>
+                  </motion.div>
+                );
+              })}
+            </div>
           </div>
         </motion.section>
 
@@ -312,72 +327,78 @@ export default function AboutPage() {
 
         {/* 5. What We're Not */}
         <motion.section
-          className="w-full max-w-4xl mx-auto text-center space-y-16"
+          className="w-full max-w-5xl mx-auto space-y-16"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
-          <motion.div variants={fadeUp} className="space-y-6">
+          <motion.div variants={fadeUp} className="space-y-6 text-center">
             <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold clash text-[#111111]">What We&apos;re Not</h2>
             <p className="text-xl md:text-2xl text-gray-700 gilroy font-medium max-w-2xl mx-auto">
               AviReels is not for everyone. We&apos;re built for brands that want to dominate. Not dabble.
             </p>
           </motion.div>
 
-          <motion.div
-            variants={fadeUp}
-            className="bg-white rounded-[2rem] p-8 md:p-14 lg:p-16 shadow-2xl border border-black/5 text-left relative overflow-hidden flex flex-col justify-between"
-          >
-            <div className="absolute top-0 left-0 w-2 h-full bg-[#171717]" />
-            <div className="space-y-6 md:space-y-8 pl-4 lg:pl-0 mb-8">
-              <p className="text-xl md:text-2xl font-bold text-black border-b border-black/5 pb-6 clash">We&apos;re not the right fit if you:</p>
-              <div className="grid gap-4 md:gap-5">
-                {[
-                  "Treat content as an afterthought and aren't ready to take it seriously",
-                  "Want viral hacks over compounding authority",
-                  "Are uncomfortable with AI-generated content",
-                  "Aren't willing to show up consistently in your category"
-                ].map((item, idx) => (
-                  <motion.div
-                    key={idx}
-                    whileHover={{ x: 10, backgroundColor: "rgba(0,0,0,0.02)" }}
-                    className="flex items-start gap-5 text-base md:text-xl text-gray-600 font-medium p-3 md:p-4 rounded-xl transition-all duration-300"
-                  >
-                    <div className="w-2.5 h-2.5 rounded-sm bg-[#171717] rotate-45 shrink-0 mt-2 md:mt-1.5" />
-                    <span className="leading-relaxed">{item}</span>
-                  </motion.div>
-                ))}
-              </div>
-            </div>
-            <div className="pl-4 lg:pl-0 pt-8 border-t border-black/5">
-              <p className="text-xl md:text-2xl font-bold text-[#111111] clash">If that&apos;s not you, let&apos;s talk.</p>
-            </div>
+          <div className="grid md:grid-cols-2 gap-6 w-full">
+            {[
+              { text: "Treat content as an afterthought and aren't ready to take it seriously" },
+              { text: "Want viral hacks over compounding authority" },
+              { text: "Are uncomfortable with AI-generated content" },
+              { text: "Aren't willing to show up consistently in your category" }
+            ].map((item, idx) => (
+              <motion.div
+                key={idx}
+                variants={fadeUp}
+                whileHover={{ scale: 1.02, backgroundColor: "#fafafa" }}
+                className="bg-white rounded-3xl p-8 border border-black/5 shadow-sm flex items-start gap-5 transition-colors duration-300 group"
+              >
+                <div className="mt-1 w-12 h-12 rounded-full bg-red-50 flex items-center justify-center flex-shrink-0 group-hover:bg-red-100 transition-colors">
+                  <div className="w-5 h-5 rounded-sm bg-red-500 rotate-45" />
+                </div>
+                <div className="flex flex-col justify-center h-full">
+                  <p className="text-xs font-bold uppercase tracking-widest text-[#111111] opacity-40 clash mb-2">Mismatch</p>
+                  <span className="text-gray-800 font-semibold gilroy text-lg leading-snug">{item.text}</span>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+
+          <motion.div variants={fadeUp} className="text-center pt-8 border-t border-black/5 max-w-2xl mx-auto">
+            <p className="text-xl md:text-2xl font-bold text-[#111111] clash">If that&apos;s not you, let&apos;s talk.</p>
           </motion.div>
         </motion.section>
 
         {/* 6. The Standard */}
         <motion.section
-          className="w-full text-center space-y-10 max-w-4xl mx-auto py-12 md:py-20"
+          className="w-full relative py-24 md:py-32 lg:py-40 rounded-[3rem] bg-[#171717] overflow-hidden text-center max-w-6xl mx-auto text-white shadow-2xl my-20"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: true, margin: "-100px" }}
           variants={staggerContainer}
         >
-          <motion.h2 variants={fadeUp} className="text-sm font-bold uppercase tracking-[0.25em] text-gray-500">The Standard</motion.h2>
-          <motion.p variants={fadeUp} className="text-2xl md:text-4xl text-[#171717] font-medium leading-relaxed gilroy">
-            Every brand we work with should reach a point where their audience thinks:
-          </motion.p>
-          <motion.div variants={fadeUp} className="py-8 md:py-12 relative">
-            <div className="absolute left-1/2 -top-4 -translate-x-1/2 text-9xl text-black/5 font-serif leading-none">"</div>
-            <blockquote className="text-4xl md:text-5xl lg:text-7xl clash font-semibold text-[#111111] leading-tight relative z-10">
-              &apos;They always seem to know what&apos;s going on.&apos;
-            </blockquote>
-          </motion.div>
-          <motion.div variants={fadeUp} className="space-y-3 text-lg md:text-xl text-gray-600 font-medium gilroy bg-white/50 inline-block px-8 py-6 rounded-2xl shadow-sm border border-black/5">
-            <p>That&apos;s not luck. That&apos;s what consistent, strategic presence builds.</p>
-            <p className="text-[#171717] font-bold text-xl md:text-2xl pt-2">We make sure you get there.</p>
-          </motion.div>
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(255,255,255,0.05),transparent_50%)]" />
+          <div className="absolute inset-0 bg-[radial-gradient(circle_at_bottom_left,rgba(255,255,255,0.05),transparent_50%)]" />
+
+          <div className="relative z-10 px-6 max-w-4xl mx-auto space-y-12">
+            <motion.h2 variants={fadeUp} className="text-sm font-bold uppercase tracking-[0.3em] text-gray-400">The Standard</motion.h2>
+
+            <motion.div variants={fadeUp} className="relative">
+              <div className="absolute left-1/2 -top-16 -translate-x-1/2 text-[180px] text-white/5 font-serif leading-none italic select-none">"</div>
+              <blockquote className="text-4xl md:text-5xl lg:text-6xl font-bold clash leading-tight relative mt-16 mb-8 text-[#F4F2EC]">
+                Every brand we work with should reach a point where their audience thinks:
+                <br /><br />
+                <span className="text-white bg-white/10 px-6 py-2 rounded-2xl inline-block mt-4 italic font-medium opacity-100 backdrop-blur-sm border border-white/10">
+                  &apos;They always seem to know what&apos;s going on.&apos;
+                </span>
+              </blockquote>
+            </motion.div>
+
+            <motion.div variants={fadeUp} className="text-lg md:text-xl text-gray-300 font-medium gilroy">
+              <p>That&apos;s not luck. That&apos;s what consistent, strategic presence builds.</p>
+              <p className="text-white font-bold text-xl md:text-2xl mt-6 uppercase tracking-[0.15em]">We make sure you get there.</p>
+            </motion.div>
+          </div>
         </motion.section>
 
         {/* 7. Proof Section (Documented Performance) */}
@@ -475,43 +496,42 @@ export default function AboutPage() {
         className="w-full bg-[#171717] text-white py-24 md:py-32 relative overflow-hidden"
         initial="hidden"
         whileInView="visible"
-        viewport={{ once: true }}
-        variants={fadeUp}
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
       >
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 mix-blend-soft-light" />
         <div className="max-w-7xl mx-auto px-6 relative z-10">
-          <h2 className="text-center text-xl md:text-3xl font-bold clash text-white/90 mb-16 max-w-3xl mx-auto">Different niches. Different platforms. Same underlying system.</h2>
+          <motion.h2 variants={fadeUp} className="text-center text-xl md:text-3xl font-bold clash text-white/90 mb-16 max-w-3xl mx-auto">Different niches. Different platforms. Same underlying system.</motion.h2>
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-12 lg:gap-10 text-center lg:text-left">
-            <div className="space-y-4 lg:border-l lg:border-white/10 lg:pl-10">
-              <p className="text-4xl md:text-5xl lg:text-6xl font-bold clash tracking-tight text-white flex items-center justify-center lg:justify-start">
-                <AnimatedCounter value={142} />M+
-              </p>
-              <p className="text-xs md:text-sm text-gray-400 font-bold uppercase tracking-[0.2em]">Impressions</p>
-            </div>
-            <div className="space-y-4 lg:border-l lg:border-white/10 lg:pl-10">
-              <p className="text-4xl md:text-5xl lg:text-6xl font-bold clash tracking-tight text-white flex items-center justify-center lg:justify-start">
-                <AnimatedCounter value={134.1} isDecimal={true} />M
-              </p>
-              <p className="text-xs md:text-sm text-gray-400 font-bold uppercase tracking-[0.2em]">YouTube Views</p>
-            </div>
-            <div className="space-y-4 lg:border-l lg:border-white/10 lg:pl-10">
-              <p className="text-4xl md:text-5xl lg:text-6xl font-bold clash tracking-tight text-white flex items-center justify-center lg:justify-start">
-                <AnimatedCounter value={10500} suffix="+" />
-              </p>
-              <p className="text-xs md:text-sm text-gray-400 font-bold uppercase tracking-[0.2em]">Followers</p>
-            </div>
-            <div className="space-y-4 lg:border-l lg:border-white/10 lg:pl-10">
-              <p className="text-4xl md:text-5xl lg:text-6xl font-bold clash tracking-tight text-white flex items-center justify-center lg:justify-start">
-                <AnimatedCounter value={1000} prefix="$" suffix="+" />
-              </p>
-              <p className="text-xs md:text-sm text-gray-400 font-bold uppercase tracking-[0.2em]">Mo. Revenue</p>
-            </div>
+            {[
+              { val: 142, label: "Impressions", suffix: "M+", isDec: false },
+              { val: 134.1, label: "YouTube Views", suffix: "M", isDec: true },
+              { val: 10500, label: "Followers", suffix: "+", isDec: false },
+              { val: 1000, label: "Mo. Revenue", prefix: "$", suffix: "+", isDec: false }
+            ].map((stat, idx) => (
+              <motion.div key={idx} variants={fadeUp} className="space-y-4 lg:border-l lg:border-white/10 lg:pl-10">
+                <motion.p
+                  initial={{ opacity: 0, scale: 0.5, y: 20 }}
+                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
+                  transition={{ type: "spring", stiffness: 100, delay: idx * 0.1 }}
+                  className="text-4xl md:text-5xl lg:text-6xl font-bold clash tracking-tight flex items-center justify-center lg:justify-start overflow-hidden pt-2 pb-2"
+                >
+                  <AnimatedCounter
+                    value={stat.val}
+                    prefix={stat.prefix || ""}
+                    suffix={stat.suffix || ""}
+                    isDecimal={stat.isDec}
+                  />
+                </motion.p>
+                <p className="text-xs md:text-sm text-gray-400 font-bold uppercase tracking-[0.2em]">{stat.label}</p>
+              </motion.div>
+            ))}
           </div>
         </div>
       </motion.section>
 
       {/* The Combined Scorecard */}
-      <div className="max-w-5xl mx-auto px-6 py-24 md:py-32">
+      <div className="max-w-6xl mx-auto px-6 py-24 md:py-32 w-full">
         <motion.section
           className="w-full"
           initial="hidden"
@@ -520,32 +540,45 @@ export default function AboutPage() {
           variants={staggerContainer}
         >
           <motion.div variants={fadeUp} className="text-center mb-16 space-y-4">
-            <h2 className="text-4xl md:text-5xl font-bold clash text-[#111111]">The Combined Scorecard</h2>
+            <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold clash text-[#111111]">The Combined Scorecard</h2>
             <p className="text-lg md:text-xl text-gray-600 gilroy font-medium max-w-2xl mx-auto">Across all active and completed engagements, this is what the system has built:</p>
           </motion.div>
 
-          <motion.div variants={fadeUp} className="bg-white rounded-3xl p-8 md:p-12 lg:p-16 shadow-lg border border-black/5">
-            <ul className="grid md:grid-cols-2 gap-x-12 gap-y-6 md:gap-y-8">
-              {[
-                "142,000,000+ documented organic impressions across platforms",
-                "134,100,000 YouTube views from 10 videos (ForgedFury)",
-                "7,730,000 Instagram Reel views across 6 videos (AI for Everybody)",
-                "376,000 monthly Threads views in month one (TrueMuslimWarrior)",
-                "YouTube monetization achieved 70–80% faster than industry average",
-                "Sales calls booked directly from AI avatar landing pages",
-                "100% repeat client rate on completed B2B projects",
-                "eBook revenue driven from organic content with zero ad spend",
-                "Authority built to reduce sales friction: consistent presence that makes inbound deals easier.",
-                "Content built to convert, not just go viral: every engagement is tied to a business outcome."
-              ].map((point, idx) => (
-                <li key={idx} className="flex gap-4">
-                  <div className="mt-1 flex-shrink-0 w-6 h-6 rounded-full bg-blue-50 flex items-center justify-center border border-blue-100">
-                    <CheckCircle2 className="w-3.5 h-3.5 text-blue-600" />
+          <motion.div variants={fadeUp} className="bg-white rounded-[3rem] shadow-[0_20px_60px_-15px_rgba(0,0,0,0.05)] border border-black/5 overflow-hidden">
+            <div className="grid md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-black/5">
+              <div className="p-10 lg:p-16 space-y-6 lg:space-y-8 bg-gray-50/50">
+                {[
+                  "142,000,000+ documented organic impressions across platforms",
+                  "134,100,000 YouTube views from 10 videos (ForgedFury)",
+                  "7,730,000 Instagram Reel views across 6 videos (AI for Everybody)",
+                  "376,000 monthly Threads views in month one (TrueMuslimWarrior)",
+                  "YouTube monetization achieved 70–80% faster than industry average"
+                ].map((point, idx) => (
+                  <div key={idx} className="flex gap-5 group">
+                    <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-black/5 flex items-center justify-center border border-black/5 group-hover:bg-black group-hover:text-white transition-colors duration-300">
+                      <span className="text-sm font-bold">{idx + 1}</span>
+                    </div>
+                    <span className="text-[1.05rem] md:text-lg text-gray-700 font-medium gilroy leading-relaxed">{point}</span>
                   </div>
-                  <span className="text-base md:text-lg text-gray-700 font-medium gilroy leading-relaxed">{point}</span>
-                </li>
-              ))}
-            </ul>
+                ))}
+              </div>
+              <div className="p-10 lg:p-16 space-y-6 lg:space-y-8 bg-white">
+                {[
+                  "Sales calls booked directly from AI avatar landing pages",
+                  "100% repeat client rate on completed B2B projects",
+                  "eBook revenue driven from organic content with zero ad spend",
+                  "Authority built to reduce sales friction: consistent presence that makes inbound deals easier.",
+                  "Content built to convert, not just go viral: every engagement is tied to a business outcome."
+                ].map((point, idx) => (
+                  <div key={idx + 5} className="flex gap-5 group">
+                    <div className="mt-1 flex-shrink-0 w-8 h-8 rounded-full bg-black/5 flex items-center justify-center border border-black/5 group-hover:bg-black group-hover:text-white transition-colors duration-300">
+                      <span className="text-sm font-bold">{idx + 6}</span>
+                    </div>
+                    <span className="text-[1.05rem] md:text-lg text-gray-700 font-medium gilroy leading-relaxed">{point}</span>
+                  </div>
+                ))}
+              </div>
+            </div>
           </motion.div>
         </motion.section>
       </div>
