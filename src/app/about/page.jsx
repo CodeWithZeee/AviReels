@@ -385,12 +385,25 @@ export default function AboutPage() {
 
             <motion.div variants={fadeUp} className="relative">
               <div className="absolute left-1/2 -top-16 -translate-x-1/2 text-[180px] text-white/5 font-serif leading-none italic select-none">"</div>
-              <blockquote className="text-4xl md:text-5xl lg:text-6xl font-bold clash leading-tight relative mt-16 mb-8 text-[#F4F2EC]">
+              <blockquote className="text-4xl md:text-5xl lg:text-6xl font-bold clash leading-tight relative mt-16 mb-12 text-[#F4F2EC]">
                 Every brand we work with should reach a point where their audience thinks:
-                <br /><br />
-                <span className="text-white bg-white/10 px-6 py-2 rounded-2xl inline-block mt-4 italic font-medium opacity-100 backdrop-blur-sm border border-white/10">
-                  &apos;They always seem to know what&apos;s going on.&apos;
-                </span>
+
+                <div className="relative mt-16 max-w-4xl mx-auto p-[1px] rounded-[2rem] bg-gradient-to-b from-white/20 to-white/5 shadow-2xl">
+                  <div className="absolute inset-0 bg-indigo-500/20 blur-2xl rounded-[3rem] -z-10" />
+                  <div className="bg-[#111111]/80 backdrop-blur-xl rounded-[2rem] p-10 md:p-14 border border-white/5 relative overflow-hidden group hover:bg-[#111111]/90 transition-colors duration-500">
+                    <div className="absolute -top-24 -right-24 w-64 h-64 bg-indigo-500/20 blur-3xl rounded-full pointer-events-none transition-colors duration-500 group-hover:bg-indigo-500/30" />
+                    <div className="absolute -bottom-24 -left-24 w-64 h-64 bg-purple-500/20 blur-3xl rounded-full pointer-events-none transition-colors duration-500 group-hover:bg-purple-500/30" />
+
+                    <div className="relative z-10 flex flex-col items-center">
+                      <div className="w-12 h-12 rounded-full bg-white/10 flex items-center justify-center mb-6 border border-white/20 shadow-inner">
+                        <span className="text-2xl text-white font-serif leading-none mt-2">"</span>
+                      </div>
+                      <p className="text-3xl md:text-4xl lg:text-5xl text-white font-bold clash tracking-wide text-center leading-[1.3]">
+                        They always seem to know what&apos;s going on.
+                      </p>
+                    </div>
+                  </div>
+                </div>
               </blockquote>
             </motion.div>
 
@@ -510,19 +523,14 @@ export default function AboutPage() {
               { val: 1000, label: "Mo. Revenue", prefix: "$", suffix: "+", isDec: false }
             ].map((stat, idx) => (
               <motion.div key={idx} variants={fadeUp} className="space-y-4 lg:border-l lg:border-white/10 lg:pl-10">
-                <motion.p
-                  initial={{ opacity: 0, scale: 0.5, y: 20 }}
-                  whileInView={{ opacity: 1, scale: 1, y: 0 }}
-                  transition={{ type: "spring", stiffness: 100, delay: idx * 0.1 }}
-                  className="text-4xl md:text-5xl lg:text-6xl font-bold clash tracking-tight flex items-center justify-center lg:justify-start overflow-hidden pt-2 pb-2"
-                >
+                <p className="text-4xl md:text-5xl lg:text-6xl font-bold clash tracking-tight flex items-center justify-center lg:justify-start overflow-hidden pt-2 pb-2">
                   <AnimatedCounter
                     value={stat.val}
                     prefix={stat.prefix || ""}
                     suffix={stat.suffix || ""}
                     isDecimal={stat.isDec}
                   />
-                </motion.p>
+                </p>
                 <p className="text-xs md:text-sm text-gray-400 font-bold uppercase tracking-[0.2em]">{stat.label}</p>
               </motion.div>
             ))}
