@@ -53,20 +53,13 @@ function PerformanceCard({ card, index }) {
     <motion.div
       variants={fadeUp}
       layout
-      onHoverStart={() => setIsExpanded(true)}
-      onHoverEnd={() => setIsExpanded(false)}
-      onClick={() => setIsExpanded(!isExpanded)}
-      className="bg-white p-8 md:p-10 lg:p-12 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border border-black/5 relative overflow-hidden transition-shadow duration-300 flex flex-col cursor-pointer group"
+      className={`bg-white p-8 md:p-10 lg:p-12 rounded-[2rem] shadow-[0_8px_30px_rgb(0,0,0,0.04)] hover:shadow-[0_20px_40px_rgb(0,0,0,0.08)] border ${isExpanded ? 'border-gray-200' : 'border-black/5'} relative overflow-hidden transition-all duration-300 flex flex-col`}
     >
-      <motion.div layout="position" className="mb-4 pb-4 border-b border-black/5 z-10">
-        <h3 className="text-2xl font-bold clash text-[#111111] mb-3 leading-tight tracking-tight group-hover:text-black transition-colors">{card.title}</h3>
+      <motion.div layout="position" className="mb-4 pb-4 border-b border-black/5 z-10 flex-1">
+        <h3 className="text-2xl font-bold clash text-[#111111] mb-3 leading-tight tracking-tight">{card.title}</h3>
         <p className="text-gray-600 font-semibold text-base md:text-lg leading-relaxed">{card.subtitle}</p>
       </motion.div>
 
-      {/* 
-        This container holds the bullet points.
-        It starts collapsed (height: 0, opacity: 0) and expands on hover (desktop) or tap (mobile).
-      */}
       <motion.div
         initial={false}
         animate={{
@@ -74,10 +67,10 @@ function PerformanceCard({ card, index }) {
           opacity: isExpanded ? 1 : 0,
           marginTop: isExpanded ? 16 : 0
         }}
-        transition={{ duration: 0.4, ease: "easeOut" }}
+        transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
         className="overflow-hidden relative z-0"
       >
-        <ul className="space-y-4">
+        <ul className="space-y-4 pb-6">
           {card.points.map((point, i) => (
             <li key={i} className="flex flex-col text-gray-700 font-medium text-[0.95rem] md:text-base gilroy relative pl-5">
               <span className="absolute left-0 top-2.5 w-1.5 h-1.5 rounded-full bg-black/40" />
@@ -87,22 +80,19 @@ function PerformanceCard({ card, index }) {
         </ul>
       </motion.div>
 
-      {/* Visual cue to hover/click for more info */}
       <motion.div
         layout="position"
-        initial={false}
-        animate={{
-          opacity: isExpanded ? 0 : 1,
-          height: isExpanded ? 0 : "auto",
-          marginTop: isExpanded ? 0 : 16
-        }}
-        transition={{ duration: 0.3 }}
-        className="text-sm font-bold text-gray-400 uppercase tracking-widest flex items-center gap-2 overflow-hidden"
+        onClick={() => setIsExpanded(!isExpanded)}
+        className="text-sm font-bold text-gray-800 uppercase tracking-widest flex items-center gap-2 cursor-pointer w-max group px-5 py-2.5 -ml-5 rounded-full hover:bg-gray-100 transition-colors mt-auto"
       >
-        <span>View Details</span>
-        <ArrowRight className="w-4 h-4" />
+        <span>{isExpanded ? "Close Details" : "View Details"}</span>
+        <motion.div
+          animate={{ rotate: isExpanded ? -90 : 0 }}
+          transition={{ duration: 0.3 }}
+        >
+          <ArrowRight className="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" />
+        </motion.div>
       </motion.div>
-
     </motion.div>
   );
 }
