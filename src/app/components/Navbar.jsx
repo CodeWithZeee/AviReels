@@ -17,12 +17,12 @@ const Navbar = () => {
       href: "/about",
     },
     {
-      name: "Result",
-      href: "/result",
-    },
-    {
       name: "Pricing",
       href: "/pricing",
+    },
+    {
+      name: "Result",
+      href: "/result",
     },
   ];
 
