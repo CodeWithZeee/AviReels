@@ -60,12 +60,12 @@ export default function CostBreakdown() {
 
           <AnimatedText
             text={text1}
-            className="text-xl md:text-2xl leading-relaxed text-neutral-700 font-medium"
+            className="text-xl md:text-2xl leading-relaxed text-gray-700 font-medium gilroy"
           />
 
           <AnimatedText
             text={text2}
-            className="mt-6 text-xl md:text-2xl leading-relaxed font-semibold text-black"
+            className="mt-6 text-xl md:text-2xl leading-relaxed font-bold text-[#111111] clash"
           />
         </div>
       </div>

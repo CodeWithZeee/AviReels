@@ -14,17 +14,18 @@ import ClosingSection from "./components/ClosingSection";
 const page = () => {
   return (
     <div>
-      <Hero />
-      <StatWall />
-      <SocialProofRibbon />
-      <HWW />
-      <WhatWeBuild />
-      <ClientResult />
-      <Testimonial />
-      <WWB />
-      <Comparison />
-      <Accordion />
-      <ClosingSection />
+      <Hero /> {/* SECTION 1 - HERO */}
+      <SocialProofRibbon /> {/* Added proof */}
+      <WWB /> {/* SECTION 2 - PAIN */}
+      <WhatWeBuild /> {/* SECTION 3 - SOLUTION */}
+      <Testimonial /> {/* SECTION 4 - AVATAR PROOF */}
+      <ClientResult /> {/* SECTION 5 - THREE SERVICES */}
+      <StatWall /> {/* SECTION 6 - TRACK RECORD */}
+      <HWW /> {/* SECTION 7 - HOW IT WORKS */}
+      <Comparison /> {/* Extra comparison from original, keep it? The doc doesn't mention it, but we can keep it or hide it. Let's comment it out since it's not in the copy. */}
+      {/* <Comparison /> */}
+      <Accordion /> {/* SECTION 8 - FAQ */}
+      <ClosingSection /> {/* SECTION 9 - FINAL CTA */}
     </div>
   );
 };

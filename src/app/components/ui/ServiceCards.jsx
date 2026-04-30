@@ -73,12 +73,12 @@ export default function ServiceCards() {
             </motion.div>
 
             {/* Title */}
-            <h3 className="relative text-xl md:text-2xl font-semibold text-neutral-900 mb-4 tracking-tight">
+            <h3 className="relative text-xl md:text-2xl font-bold text-[#111111] clash mb-4 tracking-tight">
               {service.title}
             </h3>
 
             {/* Subtitle */}
-            <p className="relative text-neutral-600 leading-relaxed mb-6">
+            <p className="relative text-gray-600 font-medium gilroy leading-relaxed mb-6">
               {service.subtitle}
             </p>
 
@@ -88,9 +88,9 @@ export default function ServiceCards() {
             </div>
 
             {/* Outcome */}
-            <p className="relative font-medium text-neutral-900">
+            <p className="relative font-bold text-[#111111] clash">
               Outcome:{" "}
-              <span className="text-neutral-600 font-normal">
+              <span className="text-gray-600 font-medium gilroy">
                 {service.outcome}
               </span>
             </p>

@@ -1,110 +1,100 @@
-import { Check, X, Aperture } from "lucide-react";
-import Image from "next/image";
+"use client";
+
+import { motion } from "framer-motion";
+import { Check, X } from "lucide-react";
 import CostBreakdown from "./ui/CostBreakdown";
 
 export default function Comparison() {
-  return (
-    <section className="bg-[#F4F2EC] px-6 py-32">
-      <div className="max-w-7xl mx-auto">
-        {/* Header */}
-        <div className="text-center mb-24">
-          <div className="inline-flex items-center justify-center bg-[#E5E2DC] px-5 py-2 rounded-full text-sm font-semibold text-black/80 mb-8">
-            The difference
-          </div>
+  const fadeUp = {
+    hidden: { opacity: 0, y: 30 },
+    visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: "easeOut" } },
+  };
 
-          <h2
-            className="text-[2.75rem] sm:text-[3.5rem] md:text-[4.25rem]
-                         leading-[1.1] font-semibold text-black"
+  const staggerContainer = {
+    hidden: { opacity: 0 },
+    visible: {
+      opacity: 1,
+      transition: { staggerChildren: 0.15 },
+    },
+  };
+
+  return (
+    <section className="bg-[#F4F2EC] px-6 py-32 overflow-hidden">
+      <motion.div
+        className="max-w-7xl mx-auto"
+        initial="hidden"
+        whileInView="visible"
+        viewport={{ once: true, margin: "-100px" }}
+        variants={staggerContainer}
+      >
+        {/* Header */}
+        <div className="text-center mb-20 md:mb-24">
+          <motion.div variants={fadeUp} className="mb-8">
+            <span className="inline-block px-5 py-2.5 text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase rounded-full bg-black/5 text-gray-800 border border-black/5">
+              The difference
+            </span>
+          </motion.div>
+
+          <motion.h2
+            variants={fadeUp}
+            className="text-[3rem] sm:text-[4rem] lg:text-[4.75rem] leading-[1.05] font-bold clash text-[#111111]"
           >
-            The alternative costs more <br />
+            The alternative costs more <br className="hidden md:block" />
             and delivers less.{" "}
-            {/* <span className="font-serif italic font-normal">AviReels</span> */}
-          </h2>
+          </motion.h2>
         </div>
 
         {/* Comparison Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 max-w-5xl mx-auto">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-10 max-w-5xl mx-auto mb-20">
           {/* Other Agencies */}
-          <div className="bg-[#EBE9E4]/60 rounded-[2.5rem] p-10 md:p-12 opacity-70">
-            <h3 className="text-2xl font-bold text-[#A8A6A1] mb-10 text-center">
+          <motion.div
+            variants={fadeUp}
+            className="bg-[#EBE9E4]/60 rounded-[3rem] p-10 md:p-14 opacity-80 border border-black/5 flex flex-col h-full hover:opacity-100 transition-opacity duration-300"
+          >
+            <h3 className="text-2xl md:text-3xl font-bold text-[#A8A6A1] clash mb-10 text-center">
               Other Agencies
             </h3>
 
-            <ul className="space-y-6 text-[#9CA3AF] font-medium text-lg">
-              <li className="flex items-center gap-4">
-                <IconX /> You film. They edit
-              </li>
-              <li className="flex items-center gap-4">
-                <IconX /> Slow production cycle
-              </li>
-              <li className="flex items-center gap-4">
-                <IconX /> You manage posting and scheduling
-              </li>
-              <li className="flex items-center gap-4">
-                <IconX /> Content without distribution strategy
-              </li>
-              <li className="flex items-center gap-4">
-                <IconX /> Volume without a clear business outcome
-              </li>
-              <li className="flex items-center gap-4">
-                <IconX /> Long-term contracts before you see results
-              </li>
-              <li className="flex items-center gap-4">
-                <IconX /> No AI. Higher cost per video
-              </li>
-              <li className="flex items-center gap-4">
-                <IconX /> Monthly reporting. Minimal iteration
-              </li>
+            <ul className="space-y-6 text-[#9CA3AF] font-medium gilroy text-base md:text-lg flex-1">
+              <li className="flex items-start gap-4"><IconX /> <span className="pt-0.5 leading-snug">You film. They edit</span></li>
+              <li className="flex items-start gap-4"><IconX /> <span className="pt-0.5 leading-snug">Slow production cycle</span></li>
+              <li className="flex items-start gap-4"><IconX /> <span className="pt-0.5 leading-snug">You manage posting and scheduling</span></li>
+              <li className="flex items-start gap-4"><IconX /> <span className="pt-0.5 leading-snug">Content without distribution strategy</span></li>
+              <li className="flex items-start gap-4"><IconX /> <span className="pt-0.5 leading-snug">Volume without a clear business outcome</span></li>
+              <li className="flex items-start gap-4"><IconX /> <span className="pt-0.5 leading-snug">Long-term contracts before you see results</span></li>
+              <li className="flex items-start gap-4"><IconX /> <span className="pt-0.5 leading-snug">No AI. Higher cost per video</span></li>
+              <li className="flex items-start gap-4"><IconX /> <span className="pt-0.5 leading-snug">Monthly reporting. Minimal iteration</span></li>
             </ul>
-          </div>
+          </motion.div>
 
           {/* AviReels */}
-          <div className="bg-[#FBFAF7] rounded-[2.5rem] p-10 md:p-12 shadow-sm">
+          <motion.div
+            variants={fadeUp}
+            whileHover={{ y: -5 }}
+            className="bg-white rounded-[3rem] p-10 md:p-14 shadow-[0_20px_40px_rgb(0,0,0,0.06)] border border-black/5 flex flex-col h-full transform transition-all duration-300"
+          >
             <div className="flex items-center justify-center gap-3 mb-10">
-              <div className=" p-1 rounded-md">
-                {/* <Aperture className="w-4 h-4" /> */}
-                {/* <Image
-                  src="/Logo.png"
-                  alt="Aperture Icon"
-                  width={60}
-                  height={58}
-                /> */}
-              </div>
-              <h3 className="text-2xl font-bold">AviReels</h3>
+              <h3 className="text-3xl md:text-4xl font-bold clash text-[#111111]">AviReels</h3>
             </div>
 
-            <ul className="space-y-6 font-semibold text-black text-lg">
-              <li className="flex items-center gap-4">
-                <IconCheck />Fully managed. Zero lift on your side
-              </li>
-              <li className="flex items-center gap-4">
-                <IconCheck /> News-speed production. 1-3 day delivery
-              </li>
-              <li className="flex items-center gap-4">
-                <IconCheck /> Strategy-first content tied to business outcomes
-              </li>
-              <li className="flex items-center gap-4">
-                <IconCheck /> Hyper-real AI avatars. Indistinguishable from real
-              </li>
-              <li className="flex items-center gap-4">
-                <IconCheck /> Built-in distribution and platform optimization
-              </li>
-              <li className="flex items-center gap-4">
-                <IconCheck /> 30-day pilot before any long-term commitment
-              </li>
-              <li className="flex items-center gap-4">
-                <IconCheck /> Fraction of the cost of in-house production
-              </li>
-              <li className="flex items-center gap-4">
-                <IconCheck /> Iteration built in. Performance improves monthly.
-              </li>
+            <ul className="space-y-6 font-bold text-[#111111] gilroy text-base md:text-lg flex-1">
+              <li className="flex items-start gap-4"><IconCheck /><span className="pt-0.5 leading-snug">Fully managed. Zero lift on your side</span></li>
+              <li className="flex items-start gap-4"><IconCheck /><span className="pt-0.5 leading-snug">News-speed production. 1-3 day delivery</span></li>
+              <li className="flex items-start gap-4"><IconCheck /><span className="pt-0.5 leading-snug">Strategy-first content tied to business outcomes</span></li>
+              <li className="flex items-start gap-4"><IconCheck /><span className="pt-0.5 leading-snug border-b-2 border-indigo-200">Hyper-real AI avatars. Indistinguishable from real</span></li>
+              <li className="flex items-start gap-4"><IconCheck /><span className="pt-0.5 leading-snug">Built-in distribution and platform optimization</span></li>
+              <li className="flex items-start gap-4"><IconCheck /><span className="pt-0.5 leading-snug">30-day pilot before any long-term commitment</span></li>
+              <li className="flex items-start gap-4"><IconCheck /><span className="pt-0.5 leading-snug">Fraction of the cost of in-house production</span></li>
+              <li className="flex items-start gap-4"><IconCheck /><span className="pt-0.5 leading-snug">Iteration built in. Performance improves monthly.</span></li>
             </ul>
-          </div>
+          </motion.div>
         </div>
 
-        <CostBreakdown />
+        <motion.div variants={fadeUp}>
+          <CostBreakdown />
+        </motion.div>
 
-      </div>
+      </motion.div>
     </section>
   );
 }
@@ -112,16 +102,16 @@ export default function Comparison() {
 /* Icon helpers */
 function IconX() {
   return (
-    <div className="bg-[#9CA3AF] rounded-full p-1">
-      <X className="w-3 h-3 text-white" />
+    <div className="bg-[#9CA3AF] rounded-full p-1 shrink-0 mt-0.5">
+      <X className="w-3.5 h-3.5 text-white" />
     </div>
   );
 }
 
 function IconCheck() {
   return (
-    <div className="bg-black rounded-full p-1">
-      <Check className="w-3 h-3 text-white" />
+    <div className="bg-[#111111] rounded-full p-1 shrink-0 mt-0.5 shadow-sm">
+      <Check className="w-4 h-4 text-white" />
     </div>
   );
 }

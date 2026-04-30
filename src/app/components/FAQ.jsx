@@ -1,77 +1,44 @@
 "use client";
 
 import { useState } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { Plus } from "lucide-react";
 
 const accordionData = [
   {
     id: 1,
-    title: "Are the AI avatars detectable?",
-    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
-    content:
-      "The short answer: not in normal viewing conditions. Our avatars are produced using the most advanced AI generation available. In real-world use, on real platforms, at normal playback, they are indistinguishable from a real person on camera. We can show you a comparison before you commit.",
+    title: "Can people tell it's AI?",
+    content: "No. Our avatars are produced using the most advanced generation available. Client content has run to hundreds of thousands of views with nobody spotting the AI. We'll show you a real side-by-side comparison before you commit to anything."
   },
   {
     id: 2,
-    title: "Do we need to disclose that our content uses AI?",
-    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
-    content:
-      "It depends on your jurisdiction and the platforms you publish on. Requirements vary, and they're evolving. We stay up to date on AI disclosure guidance and help you navigate compliance for your specific situation. Some clients disclose proactively as a transparency strategy — we can advise on that approach too.",
+    title: "Do I need to send footage of myself?",
+    content: "No. We can work from existing photos or video, or build your avatar entirely from scratch. Most clients start with a few photos and we take it from there."
   },
   {
     id: 3,
-    title: "Who owns the content?",
-    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
-    content:
-      "You do. Upon full payment, all delivered video content is yours under a perpetual license for the commercial purposes defined in your agreement.",
+    title: "What formats do you produce?",
+    content: "Instagram Reels, YouTube Shorts, VSLs, and ad creatives as standard. Format and volume are scoped to your specific engagement."
   },
   {
     id: 4,
-    title: "What does \"fully managed\" actually mean?",
-    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
-    content:
-      "It means you hand us a brief — or we build one from your goals — and we handle everything from there. Strategy, scripting, AI avatar production, editing, optimization, formatting, and delivery. Your team's only job is to review and approve.",
+    title: "What's included?",
+    content: "Script, avatar creation, full editing, and platform formatting. Everything ready to post. Fully managed end to end."
   },
   {
     id: 5,
-    title: "What platforms do you optimize for?",
-    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
-    content:
-      "Instagram Reels, YouTube Shorts, TikTok, LinkedIn, and Threads. Every video is formatted natively for the platforms in your plan — aspect ratio, caption style, hook structure, and length are all tuned per platform.",
+    title: "How does pricing work?",
+    content: "Every engagement is scoped to your goals, your platform, and your volume. We don't sell off-the-shelf packages. Book a call and we'll walk you through exactly what we'd build and what it costs."
   },
   {
     id: 6,
-    title: "How fast is turnaround?",
-    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
-    content:
-      "Standard delivery is 1-3 business days per video from approved script. For urgent newsjacking or time-sensitive content, we offer priority turnaround on Growth and Enterprise plans.",
+    title: "What's the commitment?",
+    content: "We start with a 30-day pilot. No long-term contract until you've seen the system working for yourself."
   },
   {
     id: 7,
-    title: "Can you use our executive's actual likeness?",
-    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
-    content:
-      "Yes — on Enterprise plans, we create a custom AI avatar based on your executive or brand spokesperson's likeness. This requires proper consent documentation, which we handle as part of onboarding.",
-  },
-  {
-    id: 8,
-    title: "What industries do you specialize in?",
-    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
-    content:
-      "We've produced high-performing content across B2B SaaS, financial content, e-commerce, automotive, digital media, and creator brands. The system adapts to the niche — the production quality and speed stay constant.",
-  },
-  {
-    id: 9,
-    title: "What if we need edits?",
-    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
-    content:
-      "Revisions are included. If a delivered video doesn't match the approved brief, we fix it. We actively encourage feedback — every note makes the system sharper.",
-  },
-  {
-    id: 10,
-    title: "How do we get started?",
-    tags: ["#Figma", "#Sketch", "#Adobe", "#Invision", "#Protopie"],
-    content:
-      "Book a strategy call. We'll learn your goals, your brand, and your competitive landscape. From there we scope your engagement. If it's a fit, we start with a 30-day pilot — no long-term commitment required until you see the system working.",
+    title: "Can you use my executive's or my own likeness?",
+    content: "Yes. We create custom AI avatars based on your likeness from photos or existing footage. Full consent documentation is handled during onboarding."
   }
 ];
 
@@ -83,197 +50,66 @@ export default function Accordion() {
   };
 
   return (
-    <>
-      <section>
-        <div className="container centerit flex-col">
-          <h1 className="gilroy text-5xl font-bold text-center">
-            Frequently Asked {" "}
-            <span className="font-serif italic font-normal">Questions</span>
-          </h1>
-          <div className="accordion">
-            {accordionData.map((item) => (
-              <div key={item.id} className="accordion-item">
-                <button
-                  className="accordion-link"
-                  onClick={() => toggleAccordion(item.id)}
-                  aria-expanded={activeId === item.id}
-                >
-                  <div className="flex p-10">
-                    <h3>{item.title}</h3>
-                    <ul>
-                      {item.tags.map((tag, index) => (
-                        <li key={index}>{tag}</li>
-                      ))}
-                    </ul>
-                  </div>
-                  <div className="icon-wrapper">
-                    <svg
-                      className={`icon arrow-forward ${activeId === item.id ? "hidden" : ""}`}
-                      width="38"
-                      height="38"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M5 12h14M12 5l7 7-7 7" />
-                    </svg>
-                    <svg
-                      className={`icon arrow-down ${activeId === item.id ? "" : "hidden"}`}
-                      width="38"
-                      height="38"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                    >
-                      <path d="M19 9l-7 7-7-7" />
-                    </svg>
-                  </div>
-                </button>
-                <div
-                  className={`answer ${activeId === item.id ? "active" : ""}`}
-                >
-                  <p>{item.content}</p>
-                </div>
-                <hr />
-              </div>
-            ))}
-          </div>
+    <section className="bg-[#F4F2EC] py-32 px-6">
+      <div className="max-w-4xl mx-auto">
+        <div className="text-center mb-16">
+          <h2 className="text-[3rem] md:text-[4.5rem] lg:text-[5rem] leading-[1.1] font-bold text-[#111111] clash">
+            Questions we get asked <br className="hidden md:block" />
+            <span className="font-serif italic font-normal text-gray-800">before every call.</span>
+          </h2>
         </div>
-      </section>
+        
+        <div className="space-y-4">
+          {accordionData.map((item) => (
+            <div 
+              key={item.id} 
+              className="bg-white rounded-[1.5rem] border border-black/5 overflow-hidden transition-all duration-300"
+            >
+              <button
+                className="w-full flex items-center justify-between p-6 md:p-8 text-left cursor-pointer group hover:bg-gray-50 transition-colors"
+                onClick={() => toggleAccordion(item.id)}
+                aria-expanded={activeId === item.id}
+              >
+                <div className="flex-1 pr-6">
+                  <h3 className="text-xl md:text-2xl font-bold clash text-[#111111] leading-snug">
+                    {item.title}
+                  </h3>
+                  {/* Tags */}
+                  {/* <div className="hidden md:flex gap-2 mt-3">
+                    {item.tags.map((tag, i) => (
+                      <span key={i} className="text-[10px] font-bold uppercase tracking-widest text-gray-400 bg-gray-100 px-2.5 py-1 rounded-md">
+                        {tag}
+                      </span>
+                    ))}
+                  </div> */}
+                </div>
+                <div className={`w-12 h-12 rounded-full border border-black/10 flex items-center justify-center shrink-0 transition-transform duration-300 ${activeId === item.id ? "rotate-45" : "rotate-0"} group-hover:bg-[#111111] group-hover:text-white group-hover:border-black text-[#111111]`}>
+                  <Plus className="w-5 h-5" />
+                </div>
+              </button>
 
-      <style jsx>{`
-        * {
-          margin: 0;
-          padding: 0;
-          box-sizing: border-box;
-        }
-
-        section {
-          width: 100%;
-          min-height: 100vh;
-          background-color: #efebe5;
-          display: flex;
-          align-items: center;
-          justify-content: center;
-          font-family: "DM Sans", sans-serif;
-          padding: 2rem 0;
-        }
-
-        .container {
-          width: 100%;
-          max-width: 80rem;
-          margin: 0 auto;
-          padding: 0 1.5rem;
-        }
-
-        .accordion-item {
-          background-color: #000;
-          border-radius: 0.4rem;
-        }
-
-        .accordion-item hr {
-          border: 1px solid rgba(255, 255, 255, 0.5);
-          border-radius: 1rem;
-          margin: 0;
-        }
-
-        .accordion-link {
-          font-size: 1.6rem;
-          color: #000000;
-          background-color: #efebe5;
-          width: 100%;
-          display: flex;
-          align-items: center;
-          justify-content: space-between;
-          padding: 1rem 2.5rem;
-          border: none;
-          cursor: pointer;
-          text-align: left;
-        }
-
-        .accordion-link:hover {
-          opacity: 0.9;
-        }
-
-        .accordion-link h3 {
-          font-weight: 500;
-          font-size: 20px;
-          color: #000000;
-        }
-
-        .icon-wrapper {
-          display: flex;
-          align-items: center;
-        }
-
-        .icon {
-          color: #000000;
-          padding: 0.5rem;
-          transition: transform 0.3s ease;
-        }
-
-        .icon.hidden {
-          display: none;
-        }
-
-        .accordion-link ul {
-          display: flex;
-          align-items: flex-end;
-          list-style-type: none;
-          margin-left: 25px;
-        }
-
-        .accordion-link li {
-          font-size: 10px;
-          color: #000000;
-          padding: 0 0 1px 5px;
-          display: none;
-        }
-
-        .flex {
-          display: flex;
-          align-items: center;
-        }
-
-        .answer {
-          max-height: 0;
-          overflow: hidden;
-          background-color: #dbdbdb;
-          transition: max-height 650ms ease;
-        }
-
-        .answer.active {
-          max-height: 20rem;
-        }
-
-        .answer p {
-          color: #000;
-          font-size: 15px;
-          padding: 2rem;
-        }
-
-        @media (max-width: 768px) {
-          .accordion-link h3 {
-            font-size: 16px;
-          }
-
-          .accordion-link ul {
-            margin-left: 10px;
-            flex-wrap: wrap;
-          }
-
-          .accordion-link li {
-            font-size: 8px;
-          }
-
-          .flex {
-            flex-direction: column;
-            align-items: flex-start;
-          }
-        }
-      `}</style>
-    </>
+              <AnimatePresence>
+                {activeId === item.id && (
+                  <motion.div
+                    initial={{ height: 0, opacity: 0 }}
+                    animate={{ height: "auto", opacity: 1 }}
+                    exit={{ height: 0, opacity: 0 }}
+                    transition={{ duration: 0.4, ease: [0.04, 0.62, 0.23, 0.98] }}
+                  >
+                    <div className="px-6 md:px-8 pb-8 pt-2 relative">
+                      {/* Subtitle border top pseudo */}
+                      <div className="absolute top-0 left-8 right-8 h-px bg-black/5" />
+                      <p className="text-gray-600 gilroy font-medium text-base md:text-[17px] leading-relaxed pt-6">
+                        {item.content}
+                      </p>
+                    </div>
+                  </motion.div>
+                )}
+              </AnimatePresence>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 }

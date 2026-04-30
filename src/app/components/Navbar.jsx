@@ -13,16 +13,12 @@ const Navbar = () => {
       href: "/",
     },
     {
+      name: "Results",
+      href: "/results",
+    },
+    {
       name: "About",
       href: "/about",
-    },
-    {
-      name: "Pricing",
-      href: "/pricing",
-    },
-    {
-      name: "Result",
-      href: "/result",
     },
   ];
 
@@ -32,76 +28,79 @@ const Navbar = () => {
 
   return (
     <nav className="relative">
-      <div className="mx-2 sm:mx-4 lg:mx-10 my-2 sm:my-4 lg:my-5 bg-transparent backdrop-blur rounded-2xl sm:rounded-3xl h-14 sm:h-16 flex items-center px-2 sm:px-4 overflow-hidden fixed top-0 left-0 right-0 z-50">
-        <Image
-          src="/Logo.png"
-          alt="Avi Reels"
-          width={70}
-          height={150}
-          className="h-12 sm:h-16 w-auto object-contain"
-        />
-        <p className="font-semibold text-lg sm:text-xl lg:text-2xl ml-1 sm:ml-2 ">
-          AviReels
-        </p>
+      <div className="fixed top-2 sm:top-4 lg:top-6 left-1/2 -translate-x-1/2 w-[calc(100%-2rem)] max-w-7xl bg-[#FBFAF7]/90 backdrop-blur-xl shadow-sm border border-black/5 rounded-2xl sm:rounded-full h-16 sm:h-20 px-4 sm:px-6 z-50 transition-all duration-300">
+        <div className="flex items-center justify-between w-full h-full gap-4">
+          <div className="flex items-center shrink-0">
+            <Link href="/">
+              <Image
+                src="/Logo.png"
+                alt="Avi Reels"
+                width={70}
+                height={150}
+                priority
+                className="h-12 sm:h-16 w-auto object-contain"
+              />
+            </Link>
+            <p className="font-bold text-xl sm:text-2xl ml-2 clash tracking-wide text-[#111111] whitespace-nowrap">
+              AviReels
+            </p>
+          </div>
 
-        {/* Desktop Navigation */}
-        <ul className="hidden font-semibold lg:flex items-center gap-8 absolute left-1/2 -translate-x-1/2">
-          {NavbarLinks.map((link) => (
-            <li className="relative group cursor-pointer" key={link.name}>
-              <Link href={link.href}>
-                <span className="text-xl">{link.name}</span>
-                <span className="underline-style"></span>
-              </Link>
-            </li>
-          ))}
-        </ul>
+          {/* Desktop Navigation */}
+          <ul className="hidden lg:flex flex-1 min-w-0 items-center justify-center gap-4 xl:gap-8 px-3 xl:px-6">
+            {NavbarLinks.map((link) => (
+              <li className="relative group cursor-pointer shrink-0" key={link.name}>
+                <Link href={link.href}>
+                  <span className="text-[13px] font-bold uppercase tracking-[0.15em] text-gray-500 transition-colors group-hover:text-[#111111] whitespace-nowrap">
+                    {link.name}
+                  </span>
+                </Link>
+              </li>
+            ))}
+          </ul>
 
-        {/* Button - Book a call */}
-        <button
-          className="hidden lg:block ml-auto bg-black text-white p-3 rounded-4xl m-2 font-bold transition-all duration-300 ease-out
-         hover:-translate-y-1 hover:scale-105
-         hover:shadow-xl active:scale-100"
-        >
-          Book a call
-        </button>
+          {/* Button - Book a call */}
+          <button
+            className="hidden lg:flex shrink-0 bg-[#111111] text-white px-7 py-3.5 rounded-full text-[13px] font-bold uppercase tracking-widest transition-all duration-300 ease-out border border-black/10 hover:bg-black hover:scale-105 hover:shadow-[0_10px_20px_rgba(0,0,0,0.1)] active:scale-95 items-center justify-center whitespace-nowrap"
+          >
+            Book a Strategy Call
+          </button>
 
-        {/* Mobile Menu Button */}
-        <button
-          onClick={toggleMenu}
-          className="lg:hidden ml-auto p-2 rounded-lg hover:bg-white/10 transition-all duration-300 mobile-menu-button"
-          aria-label="Toggle menu"
-          type="button"
-        >
-          <div className="relative w-6 h-6">
-            <Menu
-              className={`h-6 w-6 text-black transition-all duration-300 absolute ${
-                isMenuOpen
+          {/* Mobile Menu Button */}
+          <button
+            onClick={toggleMenu}
+            className="lg:hidden ml-auto shrink-0 p-2 rounded-lg hover:bg-white/10 transition-all duration-300 mobile-menu-button"
+            aria-label="Toggle menu"
+            type="button"
+          >
+            <div className="relative w-6 h-6">
+              <Menu
+                className={`h-6 w-6 text-black transition-all duration-300 absolute ${isMenuOpen
                   ? "opacity-0 rotate-180 scale-0"
                   : "opacity-100 rotate-0 scale-100"
-              }`}
-            />
-            <X
-              className={`h-6 w-6 text-black transition-all duration-300 absolute ${
-                isMenuOpen
+                  }`}
+              />
+              <X
+                className={`h-6 w-6 text-black transition-all duration-300 absolute ${isMenuOpen
                   ? "opacity-100 rotate-0 scale-100"
                   : "opacity-0 -rotate-180 scale-0"
-              }`}
-            />
-          </div>
-          {/* Fallback text if icons don't load */}
-          <span className="sr-only">
-            {isMenuOpen ? "Close menu" : "Open menu"}
-          </span>
-        </button>
+                  }`}
+              />
+            </div>
+            {/* Fallback text if icons don't load */}
+            <span className="sr-only">
+              {isMenuOpen ? "Close menu" : "Open menu"}
+            </span>
+          </button>
+        </div>
       </div>
 
       {/* Mobile Navigation */}
       <div
-        className={`mobile-menu lg:hidden fixed top-20 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg transition-all duration-300 ease-in-out z-40 ${
-          isMenuOpen
-            ? "opacity-100 translate-y-0 pointer-events-auto"
-            : "opacity-0 -translate-y-4 pointer-events-none"
-        }`}
+        className={`mobile-menu lg:hidden fixed top-20 left-4 right-4 bg-white/95 backdrop-blur-md rounded-2xl shadow-lg transition-all duration-300 ease-in-out z-40 ${isMenuOpen
+          ? "opacity-100 translate-y-0 pointer-events-auto"
+          : "opacity-0 -translate-y-4 pointer-events-none"
+          }`}
       >
         <ul className="flex flex-col p-4 space-y-2">
           {NavbarLinks.map((link) => (
@@ -109,7 +108,7 @@ const Navbar = () => {
               <Link
                 href={link.href}
                 onClick={() => setIsMenuOpen(false)}
-                className="block px-4 py-3 text-black hover:bg-black/10 rounded-lg transition-colors"
+                className="block px-4 py-4 text-[#111111] font-bold uppercase tracking-widest text-[13px] hover:bg-black/5 rounded-xl transition-colors"
               >
                 {link.name}
               </Link>
@@ -120,11 +119,10 @@ const Navbar = () => {
 
       {/* Mobile Menu Overlay */}
       <div
-        className={`mobile-menu-overlay lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ease-in-out z-30 ${
-          isMenuOpen
-            ? "opacity-100 pointer-events-auto"
-            : "opacity-0 pointer-events-none"
-        }`}
+        className={`mobile-menu-overlay lg:hidden fixed inset-0 bg-black/20 backdrop-blur-sm transition-opacity duration-300 ease-in-out z-30 ${isMenuOpen
+          ? "opacity-100 pointer-events-auto"
+          : "opacity-0 pointer-events-none"
+          }`}
         onClick={() => setIsMenuOpen(false)}
       />
     </nav>
