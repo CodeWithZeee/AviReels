@@ -26,7 +26,7 @@ const Navbar = () => {
     },
     {
       name: "Terms",
-      href: "/privacy-policy",
+      href: "/terms-of-service",
     },
   ];
 
