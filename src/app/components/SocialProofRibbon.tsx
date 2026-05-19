@@ -2,10 +2,9 @@
 export default function SocialProofRibbon() {
   const items = [
     "60M+ YouTube Views",
-    "7.73M Subscriber Brand Built",
-    "$3,700 Generated On Day 1",
-    "200M+ TikTok Hooks",
-    "Zero Filming Required",
+    "7.73M Organic Instagram Views",
+    "$3,700 From One VSL",
+    "100% Repeat Client Rate",
   ];
 
   return (

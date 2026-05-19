@@ -7,38 +7,38 @@ import { Plus } from "lucide-react";
 const accordionData = [
   {
     id: 1,
-    title: "Can people tell it's AI?",
-    content: "No. Our avatars are produced using the most advanced generation available. Client content has run to hundreds of thousands of views with nobody spotting the AI. We'll show you a real side-by-side comparison before you commit to anything."
+    title: "Can audiences tell it is AI?",
+    content: "No. Real samples of our work come first. You see the actual output and decide for yourself."
   },
   {
     id: 2,
-    title: "Do I need to send footage of myself?",
-    content: "No. We can work from existing photos or video, or build your avatar entirely from scratch. Most clients start with a few photos and we take it from there."
+    title: "What avatars can you build?",
+    content: "Any avatar you need. Built from your photos or footage, your client's likeness, or created entirely from scratch in any age, gender, race, or ethnicity."
   },
   {
     id: 3,
     title: "What formats do you produce?",
-    content: "Instagram Reels, YouTube Shorts, VSLs, and ad creatives as standard. Format and volume are scoped to your specific engagement."
+    content: "Meta ad creatives, Instagram Reels, YouTube Shorts, video sales letters, and long-form content. Volume and format are scoped per engagement."
   },
   {
     id: 4,
-    title: "What's included?",
-    content: "Script, avatar creation, full editing, and platform formatting. Everything ready to post. Fully managed end to end."
+    title: "What is included?",
+    content: "Everything from brief to delivery. Script, avatar, editing, and formatting. You receive finished assets. You do not manage the process."
   },
   {
     id: 5,
     title: "How does pricing work?",
-    content: "Every engagement is scoped to your goals, your platform, and your volume. We don't sell off-the-shelf packages. Book a call and we'll walk you through exactly what we'd build and what it costs."
+    content: "Every engagement is scoped to your goals and volume. No public pricing. Book a call and get a complete picture of exactly what gets built for you and what it costs."
   },
   {
     id: 6,
-    title: "What's the commitment?",
-    content: "We start with a 30-day pilot. No long-term contract until you've seen the system working for yourself."
+    title: "How fast is delivery?",
+    content: "Under 24 hours from brief approval to finished creative. That is the standard, not a ceiling."
   },
   {
     id: 7,
-    title: "Can you use my executive's or my own likeness?",
-    content: "Yes. We create custom AI avatars based on your likeness from photos or existing footage. Full consent documentation is handled during onboarding."
+    title: "What is the commitment?",
+    content: "It starts with a 30-day pilot. No long-term contract until the results speak for themselves."
   }
 ];
 

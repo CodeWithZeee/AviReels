@@ -69,10 +69,9 @@ export default function ClosingCTA() {
           initial={{ opacity: 0, y: 32 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.75, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
-          className="text-[3rem] sm:text-[4.5rem] md:text-[5.5rem] font-bold clash leading-[1.05] text-white tracking-tight"
+          className="text-[3rem] sm:text-[4rem] md:text-[5rem] font-bold clash leading-[1.05] text-white tracking-tight"
         >
-          Your audience is<br className="hidden sm:block" />
-          watching someone else
+          We are selective about
           <br className="hidden sm:block" />
           <em
             className="font-normal italic font-serif "
@@ -84,7 +83,7 @@ export default function ClosingCTA() {
               color: 'transparent'
             }}
           >
-            right now.
+            who we work with.
           </em>
         </motion.h2>
 
@@ -95,8 +94,9 @@ export default function ClosingCTA() {
           transition={{ duration: 0.75, ease: [0.23, 1, 0.32, 1], delay: 0.35 }}
           className="text-white/50 text-[15px] sm:text-lg gilroy font-medium max-w-2xl mx-auto leading-relaxed space-y-4"
         >
-          <p>We've delivered 60 million views. We've monetized YouTube channels in 75 days. We've built avatars so real that audiences can't tell the difference.</p>
-          <p>Your category has attention to win. We'll engineer your presence inside it — without you ever going on camera.</p>
+          <p>Four new clients a month. Chosen carefully. Given everything.</p>
+          <p>Every day without a production system behind you is a day your competitors are posting, growing, and pulling further ahead. That gap does not pause while you decide. Four spots a month. Yours to take.</p>
+          <p>60 million views. YouTube monetization in 75 days. $3,700 from a single sales video. AI avatars running across millions of views without one detection.</p>
         </motion.div>
 
         {/* CTA Buttons */}
@@ -104,15 +104,11 @@ export default function ClosingCTA() {
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1], delay: 0.48 }}
-          className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full"
+          className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full pt-4"
         >
           <button className="relative overflow-hidden bg-white text-[#111111] px-10 py-4 md:py-5 rounded-full font-bold clash tracking-wide text-base md:text-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(232,160,32,0.3)] group">
             <div className="absolute inset-0 bg-gradient-to-br from-[#f5c842] to-[#e8a020] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 flex items-center justify-center gap-2">Book a Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
-          </button>
-
-          <button className="bg-transparent text-white/80 border border-white/20 px-10 py-4 md:py-5 rounded-full font-bold clash tracking-wide text-base md:text-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:border-white/60 hover:text-white hover:bg-white/5">
-            See Client Results
           </button>
         </motion.div>
 
@@ -123,10 +119,8 @@ export default function ClosingCTA() {
           transition={{ duration: 0.7, ease: "easeOut", delay: 0.62 }}
           className="text-[11px] md:text-xs text-white/30 uppercase tracking-widest font-bold clash"
         >
-          We onboard a limited number of new clients each month.
-          <br className="sm:hidden" />
-          <span className="text-[#f5a623]/80 font-bold ml-2">30-day pilot</span>
-          {" "}· No long-term commitment.
+          <span className="text-[#f5a623]/80 font-bold">4 spots per month</span>
+          {" "}· 30-day pilot · No long-term commitment.
         </motion.p>
       </div>
 

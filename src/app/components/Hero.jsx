@@ -1,7 +1,6 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Facebook, Linkedin, Instagram } from "lucide-react";
 
 export default function Hero() {
   const fadeUp = {
@@ -18,58 +17,67 @@ export default function Hero() {
   };
 
   return (
-    <section className="bg-[#F4F2EC] pt-40 md:pt-48 pb-20 relative overflow-hidden">
+    <section className="bg-[#F4F2EC] pt-24 sm:pt-32 pb-20 relative overflow-hidden">
       {/* Background ambient gradient */}
-      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_left,rgba(0,0,0,0.03),transparent_50%)] pointer-events-none" />
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top,rgba(0,0,0,0.03),transparent_50%)] pointer-events-none" />
 
-      <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 relative z-10">
+      <div className="max-w-7xl mx-auto px-0 sm:px-6 md:px-12 lg:px-24 relative z-10">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center"
+          className="flex flex-col items-center"
           initial="hidden"
           animate="visible"
           variants={staggerContainer}
         >
-          {/* LEFT CONTENT */}
-          <div className="space-y-8 text-center md:text-left">
+          {/* VIDEO CONTAINER */}
+          <motion.div
+            variants={fadeUp}
+            className="w-full relative rounded-none sm:rounded-[2.5rem] overflow-hidden shadow-2xl mb-12 sm:mb-16 aspect-[9/16] sm:aspect-[21/9] bg-[#EBE9E4] border-y sm:border border-black/5 flex items-center justify-center group"
+          >
+            {/* Fallback placeholder (Remove or hide when actual video is used) */}
+            <div className="absolute inset-0 bg-gradient-to-tr from-black/5 to-transparent z-0" />
+            <span className="text-black/30 font-bold clash tracking-[0.2em] uppercase text-xs sm:text-xl text-center px-6 relative z-10 group-hover:scale-105 transition-transform duration-500 max-w-full">
+              [ Video Compilation <br className="sm:hidden" /> Placeholder ]
+            </span>
 
-            {/* Eyebrow Tag */}
-            <motion.div variants={fadeUp}>
-              <span className="inline-block px-5 py-2.5 text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase rounded-full bg-black/5 text-gray-800 border border-black/5">
-                Authority Infrastructure for AI Video
-              </span>
-            </motion.div>
+            <video
+              autoPlay
+              loop
+              muted
+              playsInline
+              className="absolute inset-0 w-full h-full object-cover mix-blend-multiply opacity-0"
+            // src="/hero-video.mp4" 
+            />
+          </motion.div>
 
+          <div className="w-full text-center space-y-8 max-w-4xl mx-auto px-6 sm:px-0">
             {/* Headline */}
-            <motion.h2
+            <motion.h1
               variants={fadeUp}
-              className="text-[#111111] clash leading-[1.05] tracking-tight
-              text-[3rem] sm:text-[3.75rem] md:text-[3.5rem] lg:text-[4.5rem] font-bold"
+              className="text-[#111111] clash leading-[1.05] tracking-tight text-[3.5rem] sm:text-[4.5rem] md:text-[5.5rem] lg:text-[6.5rem] font-bold"
             >
-              The World Pays Attention to People Who Show Up. <br />
-              <span className="font-serif italic font-normal text-gray-800 relative inline-block mt-2">
-                Most Never Do.
-              </span>
-            </motion.h2>
+              That's Not a <br className="hidden sm:block" /> Real Person.
+            </motion.h1>
 
             {/* Subtext */}
             <motion.div
               variants={fadeUp}
-              className="text-lg sm:text-xl md:text-xl text-gray-600 max-w-xl mx-auto md:mx-0 leading-relaxed font-medium gilroy space-y-4"
+              className="text-lg sm:text-xl md:text-2xl text-gray-600 leading-relaxed font-medium gilroy space-y-4 max-w-3xl mx-auto"
             >
-              <p>Not because they lack something to say.</p>
-              <p className="font-bold text-gray-800">
-                Because filming is uncomfortable. Editing takes hours. And showing up consistently feels impossible when life doesn't stop.
+              <p>
+                What you just watched was ready in under 24 hours. <br className="hidden sm:block" />
+                <span className="font-bold text-gray-800">No filming. No actors. No studio.</span>
               </p>
               <p>
-                AviReels builds your hyper-real AI avatar and runs your entire video presence — Instagram, YouTube, VSLs, ad creatives — so you show up every single day without ever stepping in front of a camera.
+                While the rest of the market is still setting up the shoot, this is already live.
               </p>
             </motion.div>
 
+            {/* CTAs */}
             <motion.div
               variants={fadeUp}
-              className="flex flex-col sm:flex-row items-center justify-center md:justify-start gap-4"
+              className="flex flex-col sm:flex-row items-center justify-center gap-4 pt-6"
             >
-              <button className="relative overflow-hidden bg-[#111111] text-white px-8 py-4 md:py-5 rounded-full font-bold clash tracking-wide text-lg sm:text-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(232,160,32,0.2)] group flex items-center justify-center w-full sm:w-auto shadow-md border border-black/10">
+              <button className="relative overflow-hidden bg-[#111111] text-white px-8 py-4 md:py-5 rounded-full font-bold clash tracking-wide text-lg sm:text-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] group flex items-center justify-center w-full sm:w-auto shadow-md border border-black/10">
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f5c842]/20 to-[#e8821e]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Book a Strategy Call
@@ -82,47 +90,7 @@ export default function Hero() {
                 See Real Results
               </button>
             </motion.div>
-
-            <motion.div variants={fadeUp} className="pt-4">
-              <p className="text-xs md:text-[13px] text-gray-500 w-full text-center leading-relaxed font-bold uppercase tracking-[0.1em]">
-                <span className="block">Trusted by founders and fast-growing brands.</span>
-                <span className="block my-1">
-                  <span className="mx-3 text-black/20">•</span>
-                  <span className="text-gray-800">30-day pilot</span>
-                  <span className="mx-3 text-black/20">•</span>
-                </span>
-                <span className="block">No long-term commitment.</span>
-              </p>
-            </motion.div>
           </div>
-
-          {/* RIGHT PHONE MOCKUP */}
-          <motion.div variants={fadeUp} className="relative flex justify-center md:justify-end">
-            <div
-              className="relative w-[320px] h-[640px] sm:w-[340px] sm:h-[680px] md:w-[360px] md:h-[720px] rounded-[3.5rem] border-[14px] border-white shadow-[0_30px_60px_-15px_rgba(0,0,0,0.15)] overflow-hidden bg-black group"
-            >
-              <div className="absolute inset-0 bg-gradient-to-tr from-[#111111] to-gray-900 transition-transform duration-700" />
-
-              {/* Decorative Glow */}
-              <div className="absolute -inset-20 bg-gradient-to-tr from-purple-500/20 to-blue-500/20 blur-[60px] pointer-events-none opacity-50 mix-blend-screen group-hover:opacity-100 transition-opacity duration-1000" />
-
-              {/* Status bar notch */}
-              <div className="absolute top-0 left-1/2 -translate-x-1/2 w-[35%] h-7 bg-white rounded-b-3xl z-20" />
-
-              {/* Story header */}
-              <div className="absolute top-12 left-6 flex items-center gap-3 z-10 text-white w-full pr-12">
-                <div className="w-10 h-10 rounded-full bg-gradient-to-tr from-[#f5a623] to-[#d31027] p-[2px]">
-                  <div className="w-full h-full bg-white rounded-full overflow-hidden border border-black flex items-center justify-center">
-                    <span className="text-[10px] text-black font-bold clash">AR</span>
-                  </div>
-                </div>
-                <div className="flex flex-col">
-                  <span className="text-sm font-bold tracking-wide leading-tight">AviReels</span>
-                  <span className="text-[10px] text-white/60 font-semibold tracking-wider uppercase">Visual Demo</span>
-                </div>
-              </div>
-            </div>
-          </motion.div>
         </motion.div>
       </div>
     </section>

@@ -67,10 +67,10 @@ export default function PricingPage() {
 
                     <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
                         {[
-                            { role: "Video Editor", cost: "$4k–$8k", period: "/month" },
-                            { role: "Social Manager", cost: "$4k–$7k", period: "/month" },
-                            { role: "Studio Production", cost: "$2k–$5k", period: "per shoot" },
-                            { role: "Strategist", cost: "$5k–$10k", period: "/month" }
+                            { role: "Video Editor", cost: "$4k-$8k", period: "/month" },
+                            { role: "Social Manager", cost: "$4k-$7k", period: "/month" },
+                            { role: "Studio Production", cost: "$2k-$5k", period: "per shoot" },
+                            { role: "Strategist", cost: "$5k-$10k", period: "/month" }
                         ].map((stat, idx) => (
                             <motion.div
                                 key={idx}

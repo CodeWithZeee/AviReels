@@ -28,27 +28,25 @@ export default function Mission() {
 
           {/* Heading */}
           <h2 className="text-3xl md:text-5xl lg:text-6xl font-bold clash text-[#111111] mb-10 leading-[1.05] tracking-tight">
-            You already know you need video.
-            <br />
+            The idea is never the problem. <br />
             <span className="font-serif italic font-normal text-gray-700">
-              So what's actually in the way?
+              Getting it made is.
             </span>
           </h2>
 
           {/* Paragraphs */}
-          <div className="space-y-4 text-gray-600 text-lg sm:text-xl font-medium gilroy max-w-2xl mx-auto text-left list-none pl-0">
-            <ul className="space-y-3 mb-8 list-none">
-              <li className="flex items-start gap-3"><span className="text-[#f5a623] mt-1">✦</span> You hate how you look or sound on camera.</li>
-              <li className="flex items-start gap-3"><span className="text-[#f5a623] mt-1">✦</span> You've filmed and deleted more times than you'll admit.</li>
-              <li className="flex items-start gap-3"><span className="text-[#f5a623] mt-1">✦</span> Editing kills hours you don't have.</li>
-              <li className="flex items-start gap-3"><span className="text-[#f5a623] mt-1">✦</span> You keep pushing content to tomorrow.</li>
-              <li className="flex items-start gap-3"><span className="text-[#f5a623] mt-1">✦</span> You want to run video ads but production costs eat your margins.</li>
-              <li className="flex items-start gap-3"><span className="text-[#f5a623] mt-1">✦</span> Your clients need video content but your team can't keep up with demand.</li>
-              <li className="flex items-start gap-3"><span className="text-[#f5a623] mt-1">✦</span> Your competitors are posting every day. You're not.</li>
-            </ul>
-
+          <div className="space-y-6 text-gray-600 text-lg sm:text-xl font-medium gilroy max-w-3xl text-left pl-0 leading-relaxed">
+            <p>
+              If you run ads on Meta, you know the ceiling. Not enough creatives in market, UGC creators taking two weeks per batch, and by the time the assets land, the window has already shifted.
+            </p>
+            <p>
+              If you are building a personal brand, you know what happens when filming gets pushed. One week becomes one month. Your competitors keep posting. You keep planning.
+            </p>
+            <p>
+              And if you need video production for your business or your clients, you already know what a traditional production quote looks like. Expensive. Slow. Built for a world that no longer moves at this speed.
+            </p>
             <p className="font-bold text-gray-900 border-t border-black/10 pt-8 mt-8">
-              That gap compounds. Every single day you're not showing up, someone else is owning your audience's attention.
+              This is the problem AviReels was built to eliminate.
             </p>
           </div>
 

@@ -20,6 +20,14 @@ const Navbar = () => {
       name: "About",
       href: "/about",
     },
+    {
+      name: "Privacy",
+      href: "/privacy-policy",
+    },
+    {
+      name: "Terms",
+      href: "/privacy-policy",
+    },
   ];
 
   const toggleMenu = () => {

@@ -1,7 +1,6 @@
 import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "./components/Navbar";
-import Footer from "./components/Footer";
 import LenisProvider from "./components/LenisProvider.tsx";
 import { Inter } from "next/font/google";
 

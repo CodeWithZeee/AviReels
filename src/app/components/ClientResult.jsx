@@ -19,118 +19,90 @@ const ClientResult = () => {
   };
 
   return (
-    <div className="bg-[#F4F2EC] py-20 px-6">
+    <div className="bg-[#F4F2EC] py-24 px-6 overflow-hidden">
       <motion.div
-        className="max-w-7xl mx-auto"
+        className="max-w-5xl mx-auto"
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={staggerContainer}
       >
-        <motion.div variants={fadeUp} className="flex items-center justify-center mb-16">
-          <div className="inline-block px-5 py-2.5 text-[11px] md:text-xs font-bold tracking-[0.2em] uppercase rounded-full bg-black/5 text-gray-800 border border-black/5">
-            Our Services
+        <motion.div variants={fadeUp} className="text-center mb-20 md:mb-32">
+          <h2 className="text-[3rem] sm:text-[4rem] lg:text-[4.75rem] leading-[1.05] font-bold clash text-[#111111]">
+            Built for three <br className="hidden sm:block" />
+            <span className="font-serif italic font-normal text-gray-800">kinds of growth.</span>
+          </h2>
+        </motion.div>
+
+        {/* BLOCK 1: AGENCIES AND PERFORMANCE MARKETERS */}
+        <motion.div variants={fadeUp} className="mb-24 pb-24 border-b border-black/10">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold clash text-[#111111] mb-6 leading-tight">
+              High-converting creatives. Delivered before your competitors finish their brief.
+            </h3>
+            <p className="text-lg md:text-xl text-gray-600 gilroy font-medium leading-relaxed">
+              The brands winning on Meta are running dozens of creative variations at once. You know the strategy. AviReels gives you the production volume to execute it. Full creative batches, multiple hooks, multiple formats, ready to upload in under 24 hours.
+            </p>
+          </div>
+          
+          {/* Raw Screenshot */}
+          <div className="w-full max-w-lg mx-auto mb-10">
+            <Image src="/Image_4_Elevate.png" alt="Elevate VSLs Reaction" width={800} height={400} className="w-full h-auto" />
+          </div>
+
+          <div className="flex justify-center">
+            <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:bg-black hover:scale-[1.02] active:scale-95">
+              Book a Strategy Call
+            </button>
           </div>
         </motion.div>
 
-        {/* SERVICE 1 */}
-        <motion.div variants={fadeUp} className="mb-32 border-b border-black/10 pb-20">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-            <div className="text-center lg:text-left flex flex-col justify-center h-full">
-              <div className="uppercase text-[11px] md:text-xs font-bold tracking-[0.2em] text-gray-500 mb-4">
-                Service 1: For Creators & Personal Brands
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-[1.1] font-bold mb-6 text-[#111111] clash">
-                You want to build an audience.<br />
-                <span className="italic font-normal text-gray-800">The camera is in the way.</span>
-              </h2>
-              <p className="text-[15px] sm:text-lg text-gray-600 font-medium gilroy max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                You have something to say. You know you need to show up on Instagram and YouTube consistently. But the camera is a wall — you're uncomfortable, you're busy, or the process of filming and editing every reel just never gets done.<br /><br />
-                We build your AI avatar and run your entire content operation. Daily posts. Real growth. Platform-native content engineered to stop the scroll and build your audience. You never step in front of a camera.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start">
-                <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 ease-out hover:bg-black hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3 w-full sm:w-auto">
-                  Book a Strategy Call
-                  <svg className="w-5 h-5 hidden sm:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </div>
+        {/* BLOCK 2: CREATORS AND PERSONAL BRANDS */}
+        <motion.div variants={fadeUp} className="mb-24 pb-24 border-b border-black/10">
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold clash text-[#111111] mb-6 leading-tight">
+              You have something to say. But posting has been the hard part.
+            </h3>
+            <p className="text-lg md:text-xl text-gray-600 gilroy font-medium leading-relaxed">
+              Drop your ideas, your angles, your talking points. Everything after that is handled. Your avatar goes up every day while your time stays on everything else your business actually needs from you.
+            </p>
+          </div>
+          
+          {/* Raw Screenshots */}
+          <div className="flex flex-col items-center gap-8 mb-10">
+            <div className="w-full max-w-lg">
+              <Image src="/Image_1_Brandon.png" alt="Brandon Reaction" width={800} height={400} className="w-full h-auto" />
             </div>
-            <div className="flex flex-col items-center lg:items-start gap-6 mt-8 lg:mt-0">
-              <div className="relative rounded-3xl overflow-hidden shadow-sm aspect-auto w-full max-w-[400px]">
-                <Image src="/Image_1_Brandon.png" alt="Brandon Reaction" width={400} height={200} className="w-full h-auto object-contain" />
-              </div>
-              <div className="relative rounded-3xl overflow-hidden shadow-sm aspect-auto w-full max-w-[400px]">
-                <Image src="/Image_2_Jake.png" alt="Jake Reaction" width={400} height={200} className="w-full h-auto object-contain" />
-              </div>
-              <div className="relative rounded-3xl overflow-hidden shadow-sm aspect-auto w-full max-w-[400px]">
-                <Image src="/Image_5_Natalie.png" alt="Natalie Reaction" width={400} height={200} className="w-full h-auto object-contain" />
-              </div>
+            <div className="w-full max-w-lg">
+              <Image src="/Image_2_Jake.png" alt="Jake Reaction" width={800} height={400} className="w-full h-auto" />
             </div>
+            <div className="w-full max-w-lg">
+              <Image src="/Image_5_Natalie.png" alt="Natalie Reaction" width={800} height={400} className="w-full h-auto" />
+            </div>
+          </div>
+
+          <div className="flex justify-center">
+            <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:bg-black hover:scale-[1.02] active:scale-95">
+              Book a Strategy Call
+            </button>
           </div>
         </motion.div>
 
-        {/* SERVICE 2 */}
-        <motion.div variants={fadeUp} className="mb-32 border-b border-black/10 pb-20">
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-            <div className="lg:order-2 text-center lg:text-left flex flex-col justify-center h-full">
-              <div className="uppercase text-[11px] md:text-xs font-bold tracking-[0.2em] text-gray-500 mb-4">
-                Service 2: For Businesses & Advertisers
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-[1.1] font-bold mb-6 text-[#111111] clash">
-                Video ads that convert.<br />
-                <span className="italic font-normal text-gray-800">No production budget required.</span>
-              </h2>
-              <p className="text-[15px] sm:text-lg text-gray-600 font-medium gilroy max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                You need video ads and VSLs that perform — without the cost, timeline, and coordination of traditional production. We produce AI avatar ad creatives and sales videos indistinguishable from real footage.<br /><br />
-                Higher CTR. Lower cost per view. Built to scale.<br /><br />
-                Our AI avatar VSL generated <strong className="text-black">$3,700 in direct sales</strong> for a single client. The creative outperformed their existing traditional ads from day one.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start">
-                <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 ease-out hover:bg-black hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3 w-full sm:w-auto">
-                  Book a Strategy Call
-                  <svg className="w-5 h-5 hidden sm:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            <div className="lg:order-1 flex flex-col items-center lg:items-start gap-6 mt-8 lg:mt-0">
-              <div className="relative rounded-3xl overflow-hidden shadow-sm aspect-auto w-full max-w-[400px]">
-                <Image src="/Image_4_Elevate.png" alt="Elevate VSLs Reaction" width={400} height={200} className="w-full h-auto object-contain" />
-              </div>
-            </div>
-          </div>
-        </motion.div>
-
-        {/* SERVICE 3 */}
+        {/* BLOCK 3: AGENCIES WITH WHITE-LABEL NEEDS */}
         <motion.div variants={fadeUp}>
-          <div className="grid lg:grid-cols-2 gap-10 lg:gap-20 items-start">
-            <div className="text-center lg:text-left flex flex-col justify-center h-full">
-              <div className="uppercase text-[11px] md:text-xs font-bold tracking-[0.2em] text-gray-500 mb-4">
-                Service 3: For Agencies
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-5xl leading-[1.1] font-bold mb-6 text-[#111111] clash">
-                Your clients need video.<br />
-                <span className="italic font-normal text-gray-800">We're your silent production partner.</span>
-              </h2>
-              <p className="text-[15px] sm:text-lg text-gray-600 font-medium gilroy max-w-xl mx-auto lg:mx-0 mb-10 leading-relaxed">
-                You're already selling social media management or video content to clients. But production is the bottleneck. Hiring is expensive. Turnaround is slow. Quality is inconsistent.<br /><br />
-                We become the engine behind your operation.<br /><br />
-                White-label AI avatar content delivered in 1-3 days. Your branding. Your client relationship. Your margins. We handle scripting, avatar production, editing, and formatting. You deliver and take the credit.<br /><br />
-                No overhead. No hiring. No delays. One agency partnership typically unlocks 5-10 clients from a single conversation.
-              </p>
-              <div className="flex flex-col sm:flex-row justify-center lg:justify-start">
-                <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 ease-out hover:bg-black hover:scale-[1.02] active:scale-95 flex items-center justify-center gap-3 w-full sm:w-auto">
-                  Let's Talk White-Label
-                  <svg className="w-5 h-5 hidden sm:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </button>
-              </div>
-            </div>
-            {/* No screenshot specified for Agencies */}
+          <div className="max-w-3xl mx-auto text-center mb-12">
+            <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold clash text-[#111111] mb-6 leading-tight">
+              Your clients get the output. We stay invisible.
+            </h3>
+            <p className="text-lg md:text-xl text-gray-600 gilroy font-medium leading-relaxed">
+              Scripts, avatars, editing, and formatting delivered under your brand in under 24 hours. Your clients see polished output. They never see us. Your margins stay intact and your timelines stop slipping.
+            </p>
+          </div>
+
+          <div className="flex justify-center">
+            <button className="bg-transparent text-gray-900 border-2 border-black/10 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:border-[#171717] hover:bg-[#171717]/5 active:scale-95">
+              Let's Talk White-Label
+            </button>
           </div>
         </motion.div>
 
