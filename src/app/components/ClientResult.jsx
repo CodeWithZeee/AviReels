@@ -47,7 +47,7 @@ const ClientResult = () => {
           
           {/* Raw Screenshot */}
           <div className="w-full max-w-lg mx-auto mb-10">
-            <Image src="/Image_4_Elevate.png" alt="Elevate VSLs Reaction" width={800} height={400} className="w-full h-auto" />
+            <Image src="/3_Astrix.jpg" alt="Elevate VSLs Reaction" width={800} height={400} className="w-full" />
           </div>
 
           <div className="flex justify-center">
@@ -69,15 +69,15 @@ const ClientResult = () => {
           </div>
           
           {/* Raw Screenshots */}
-          <div className="flex flex-col items-center gap-8 mb-10">
+          <div className="flex items-center gap-8 mb-10">
             <div className="w-full max-w-lg">
-              <Image src="/Image_1_Brandon.png" alt="Brandon Reaction" width={800} height={400} className="w-full h-auto" />
+              <Image src="/2_Brandon.jpg" alt="Brandon Reaction" width={800} height={400} className="w-full h-auto" />
             </div>
             <div className="w-full max-w-lg">
-              <Image src="/Image_2_Jake.png" alt="Jake Reaction" width={800} height={400} className="w-full h-auto" />
+              <Image src="/1_Jake.jpg" alt="Jake Reaction" width={800} height={400} className="w-full h-auto" />
             </div>
             <div className="w-full max-w-lg">
-              <Image src="/Image_5_Natalie.png" alt="Natalie Reaction" width={800} height={400} className="w-full h-auto" />
+              <Image src="/5_Natalei.jpg" alt="Natalie Reaction" width={800} height={400} className="w-full h-auto" />
             </div>
           </div>
 

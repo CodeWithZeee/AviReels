@@ -114,9 +114,16 @@ export default function Comparison() {
           <motion.div variants={fadeUp} className="flex flex-col md:flex-row items-center gap-8 mb-12">
             <div className="w-full md:w-1/2">
               <h4 className="text-sm font-bold text-gray-400 clash mb-4 uppercase tracking-widest text-center">Typical AI Avatar</h4>
-              <div className="aspect-[4/5] bg-gray-200 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                {/* [PLACEHOLDER A] */}
-                <div className="text-gray-400 text-sm font-bold tracking-widest uppercase">[Placeholder A]</div>
+              <div className="aspect-video bg-neutral-900 rounded-2xl flex items-center justify-center relative overflow-hidden group shadow-md border border-black/5 max-w-[480px] mx-auto w-full">
+                <span className="text-white/20 text-xs font-bold tracking-widest uppercase absolute z-0">Loading...</span>
+                <video 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="absolute inset-0 w-full h-full object-cover z-10"
+                  src="/videos/Comparison_1.mp4" 
+                />
               </div>
             </div>
             
@@ -126,9 +133,16 @@ export default function Comparison() {
             
             <div className="w-full md:w-1/2">
               <h4 className="text-sm font-bold text-[#111111] clash mb-4 uppercase tracking-widest text-center">AviReels</h4>
-              <div className="aspect-[4/5] bg-gray-200 rounded-2xl flex items-center justify-center relative overflow-hidden">
-                {/* [PLACEHOLDER B] */}
-                <div className="text-gray-400 text-sm font-bold tracking-widest uppercase">[Placeholder B]</div>
+              <div className="aspect-video bg-neutral-900 rounded-2xl flex items-center justify-center relative overflow-hidden group shadow-md border border-black/5 max-w-[480px] mx-auto w-full">
+                <span className="text-white/20 text-xs font-bold tracking-widest uppercase absolute z-0">Loading...</span>
+                <video 
+                  autoPlay 
+                  loop 
+                  muted 
+                  playsInline 
+                  className="absolute inset-0 w-full h-full object-cover z-10"
+                  src="/videos/Comparison_2.mp4" 
+                />
               </div>
             </div>
           </motion.div>
@@ -141,9 +155,9 @@ export default function Comparison() {
 
           <motion.div variants={fadeUp} className="flex flex-col items-center">
             {/* Raw WhatsApp screenshot */}
-            <div className="w-full max-w-lg mb-6">
+            {/* <div className="w-full max-w-lg mb-6">
               <Image src="/Image_3_Ser.png" alt="Ser WhatsApp Reaction" width={800} height={400} className="w-full h-auto" />
-            </div>
+            </div> */}
             <p className="text-sm text-gray-500 italic gilroy mb-12">
               Real client. First reaction. Unedited.
             </p>
