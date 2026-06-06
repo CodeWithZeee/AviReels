@@ -1,51 +1,26 @@
 "use client";
 
-import { useEffect, useRef } from "react";
 import { motion, useInView } from "framer-motion";
 import { ArrowRight } from "lucide-react";
+import { useRef } from "react";
 
 export default function ClosingCTA() {
   const sectionRef = useRef(null);
   const isInView = useInView(sectionRef, { once: true, margin: "-50px" });
-
-  useEffect(() => {
-    const handleMouse = (e) => {
-      if (!sectionRef.current) return;
-      const rect = sectionRef.current.getBoundingClientRect();
-      const x = ((e.clientX - rect.left) / rect.width) * 100;
-      const y = ((e.clientY - rect.top) / rect.height) * 100;
-      sectionRef.current.style.setProperty("--mouse-x", `${x}%`);
-      sectionRef.current.style.setProperty("--mouse-y", `${y}%`);
-    };
-    window.addEventListener("mousemove", handleMouse);
-    return () => window.removeEventListener("mousemove", handleMouse);
-  }, []);
 
   return (
     <section
       ref={sectionRef}
       className="relative w-full bg-[#080808] overflow-hidden pt-32 pb-0 flex flex-col items-center"
     >
-      {/* Animated radial glow that follows mouse */}
+      {/* Static premium ambient radial glow */}
       <div
-        className="absolute inset-0 pointer-events-none transition-colors duration-100 ease-linear"
-        style={{
-          background: `radial-gradient(ellipse 60% 50% at var(--mouse-x, 50%) var(--mouse-y, 50%), rgba(200,140,30,0.08) 0%, transparent 70%)`
-        }}
+        className="absolute inset-0 pointer-events-none bg-[radial-gradient(ellipse_60%_50%_at_center,rgba(245,166,35,0.05)_0%,transparent_75%)]"
       />
 
       {/* Static ambient glows */}
-      <div className="absolute top-[10%] left-[20%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(255,200,50,0.04)_0%,transparent_70%)] pointer-events-none blur-xl" />
-      <div className="absolute bottom-[10%] right-[15%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(255,100,50,0.03)_0%,transparent_70%)] pointer-events-none blur-xl" />
-
-      {/* Grain texture using tailwind specific URL */}
-      <div
-        className="absolute inset-[-50%] w-[200%] h-[200%] pointer-events-none opacity-40 mix-blend-overlay"
-        style={{
-          backgroundImage: `url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.035'/%3E%3C/svg%3E")`,
-          animation: "grain 0.5s steps(2) infinite"
-        }}
-      />
+      <div className="absolute top-[10%] left-[20%] w-[500px] h-[500px] rounded-full bg-[radial-gradient(circle,rgba(255,200,50,0.03)_0%,transparent_70%)] pointer-events-none blur-xl" />
+      <div className="absolute bottom-[10%] right-[15%] w-[400px] h-[400px] rounded-full bg-[radial-gradient(circle,rgba(255,100,50,0.02)_0%,transparent_70%)] pointer-events-none blur-xl" />
 
       {/* Main content */}
       <div className="relative z-10 w-full max-w-4xl mx-auto px-6 text-center space-y-12 pb-24 flex flex-col items-center">
@@ -65,28 +40,26 @@ export default function ClosingCTA() {
         </motion.div>
 
         {/* Headline */}
-        <motion.h2
-          initial={{ opacity: 0, y: 32 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.75, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
-          className="text-[3rem] sm:text-[4rem] md:text-[5rem] font-bold clash leading-[1.05] text-white tracking-tight"
-        >
-          We are selective about
-          <br className="hidden sm:block" />
-          <em
-            className="font-normal italic font-serif "
-            style={{
-              background: 'linear-gradient(135deg, #f5c842 0%, #e8821e 100%)',
-              WebkitBackgroundClip: 'text',
-              WebkitTextFillColor: 'transparent',
-              backgroundClip: 'text',
-              color: 'transparent'
-            }}
-          >
-            who we work with.
-          </em>
-        </motion.h2>
-
+<motion.h2
+  initial={{ opacity: 0, y: 32 }}
+  animate={isInView ? { opacity: 1, y: 0 } : {}}
+  transition={{ duration: 0.75, ease: [0.23, 1, 0.32, 1], delay: 0.2 }}
+  className="text-[3rem] sm:text-[4rem] md:text-[5rem] font-bold clash leading-[1.05] text-white tracking-tight"
+>
+  We are selective about{" "}
+  <em
+    className="font-normal italic font-serif block sm:inline-block"
+    style={{
+      background: 'linear-gradient(135deg, #f5c842 0%, #e8821e 100%)',
+      WebkitBackgroundClip: 'text',
+      WebkitTextFillColor: 'transparent',
+      backgroundClip: 'text',
+      color: 'transparent'
+    }}
+  >
+    who we work with.
+  </em>
+</motion.h2>
         {/* Subline */}
         <motion.div
           initial={{ opacity: 0, y: 24 }}
@@ -106,7 +79,10 @@ export default function ClosingCTA() {
           transition={{ duration: 0.7, ease: [0.23, 1, 0.32, 1], delay: 0.48 }}
           className="flex flex-col sm:flex-row gap-4 justify-center items-center w-full pt-4"
         >
-          <button className="relative overflow-hidden bg-white text-[#111111] px-10 py-4 md:py-5 rounded-full font-bold clash tracking-wide text-base md:text-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(232,160,32,0.3)] group">
+          <button
+            data-calendly-trigger="true"
+            className="relative overflow-hidden bg-white text-[#111111] px-10 py-4 md:py-5 rounded-full font-bold clash tracking-wide text-base md:text-lg transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_60px_rgba(232,160,32,0.3)] group"
+          >
             <div className="absolute inset-0 bg-gradient-to-br from-[#f5c842] to-[#e8a020] opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
             <span className="relative z-10 flex items-center justify-center gap-2">Book a Strategy Call <ArrowRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" /></span>
           </button>
@@ -148,18 +124,6 @@ export default function ClosingCTA() {
         }
         .animate-scroll {
           animation: scroll-left 35s linear infinite;
-        }
-        @keyframes grain {
-          0%, 100% { transform: translate(0, 0); }
-          10% { transform: translate(-2%, -3%); }
-          20% { transform: translate(3%, 2%); }
-          30% { transform: translate(-1%, 4%); }
-          40% { transform: translate(4%, -1%); }
-          50% { transform: translate(-3%, 3%); }
-          60% { transform: translate(2%, -4%); }
-          70% { transform: translate(-4%, 1%); }
-          80% { transform: translate(1%, -2%); }
-          90% { transform: translate(3%, 4%); }
         }
       `}} />
     </section>

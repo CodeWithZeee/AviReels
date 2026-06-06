@@ -162,7 +162,10 @@ export default function Comparison() {
               Real client. First reaction. Unedited.
             </p>
 
-            <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 ease-out hover:bg-black hover:scale-105 flex items-center justify-center gap-3 group">
+            <button
+              data-calendly-trigger="true"
+              className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 ease-out hover:bg-black hover:scale-105 flex items-center justify-center gap-3 group"
+            >
               Book a Strategy Call
               <svg className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

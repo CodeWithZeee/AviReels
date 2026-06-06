@@ -10,7 +10,7 @@ export default function Mission() {
         <motion.div
           className="bg-[#FBFAF7] rounded-[2.5rem] p-8 sm:p-12 md:p-20 shadow-2xl overflow-hidden relative border border-black/5 flex flex-col gap-8 lg:gap-16 items-center lg:items-start">
           {/* Floating Icon */}
-          <div className="absolute top-3 right-3 sm:top-6 sm:right-6 md:top-10 md:right-10 rounded-2xl rotate-12">
+          <div className="absolute top-3 right-3 sm:top-6 sm:right-6 md:top-10 md:right-10 rounded-2xl">
             {/* <Aperture className="w-6 h-6" /> */}
             <Image
               src="/Logo.png"
@@ -52,7 +52,10 @@ export default function Mission() {
 
           {/* Brand Footer / CTA */}
           <div className="pt-12 flex justify-center items-center gap-2">
-            <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 ease-out hover:bg-black hover:scale-105 hover:shadow-xl hover:shadow-black/20 active:scale-95 flex items-center justify-center gap-3 group">
+            <button
+              data-calendly-trigger="true"
+              className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 ease-out hover:bg-black hover:scale-105 hover:shadow-xl hover:shadow-black/20 active:scale-95 flex items-center justify-center gap-3 group"
+            >
               Book a Strategy Call
               <svg className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

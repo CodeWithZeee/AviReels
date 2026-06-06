@@ -1,8 +1,66 @@
 "use client";
 
-import React from "react";
-import { motion } from "framer-motion";
+import React, { useEffect, useRef, useState } from "react";
+import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
 import Image from "next/image";
+
+function AnimatedCounter({
+  value,
+  duration = 1,
+  prefix = "",
+  suffix = "",
+  isDecimal = false,
+}) {
+  const ref = useRef(null);
+  const inView = useInView(ref, { once: true, margin: "-100px" });
+
+  const motionValue = useMotionValue(0);
+  const springValue = useSpring(motionValue, {
+    duration: duration * 1000,
+    bounce: 0,
+  });
+
+  const [displayValue, setDisplayValue] = useState(
+    typeof value === "string" ? value : "0"
+  );
+
+  // If value is a string, display directly
+  if (typeof value === "string") {
+    return (
+      <span ref={ref}>
+        {prefix}
+        {value}
+        {suffix}
+      </span>
+    );
+  }
+
+  useEffect(() => {
+    if (inView) {
+      motionValue.set(value);
+    }
+  }, [inView, value, motionValue]);
+
+  useEffect(() => {
+    return springValue.on("change", (latest) => {
+      if (typeof isDecimal === "number") {
+        setDisplayValue(latest.toFixed(isDecimal));
+      } else if (isDecimal) {
+        setDisplayValue(latest.toFixed(1));
+      } else {
+        setDisplayValue(Math.floor(latest).toLocaleString());
+      }
+    });
+  }, [springValue, isDecimal]);
+
+  return (
+    <span ref={ref}>
+      {prefix}
+      {displayValue}
+      {suffix}
+    </span>
+  );
+}
 
 export default function ResultsPage() {
   const fadeUp = {
@@ -24,27 +82,32 @@ export default function ResultsPage() {
 
   const overviewStats = [
     {
-      value: "60M+",
+      value: 60,
+      suffix: "M+",
       label: "YouTube views",
       context: "Monetized in 75 days. Industry average is 6 to 12 months.",
     },
     {
-      value: "7.73M",
+      value: 7.73,
+      isDecimal: 2,
+      suffix: "M",
       label: "Organic Instagram views",
       context: "Zero ad spend. Zero paid promotion.",
     },
     {
-      value: "$3,700",
+      value: 3700,
+      prefix: "$",
       label: "From a single AI avatar VSL",
       context: "Direct sales. Measured from day one.",
     },
     {
-      value: "0",
+      value: "Zero",
       label: "Detections across millions of views",
       context: "No audience has spotted the AI.",
     },
     {
-      value: "100%",
+      value: 100,
+      suffix: "%",
       label: "Repeat engagement rate",
       context: "Every client who has finished a full engagement has come back.",
     },
@@ -172,7 +235,10 @@ export default function ResultsPage() {
           what happens when the right system runs behind a brand.
         </motion.p>
         <motion.div variants={fadeUp}>
-          <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ease-out hover:bg-black hover:scale-105">
+          <button
+            data-calendly-trigger="true"
+            className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ease-out hover:bg-black hover:scale-105"
+          >
             Book a Strategy Call
           </button>
         </motion.div>
@@ -196,7 +262,12 @@ export default function ResultsPage() {
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
             >
               <div className="text-[5rem] md:text-[7rem] lg:text-[8rem] clash font-bold leading-none tracking-tighter mb-4 text-[#111111]">
-                {stat.value}
+                <AnimatedCounter
+                  value={stat.value}
+                  prefix={stat.prefix}
+                  suffix={stat.suffix}
+                  isDecimal={stat.isDecimal}
+                />
               </div>
               <div className="text-xl md:text-2xl font-semibold gilroy text-gray-800 mb-2">
                 {stat.label}
@@ -349,7 +420,10 @@ export default function ResultsPage() {
         </motion.p>
 
         <motion.div variants={fadeUp}>
-          <button className="bg-[#171717] text-white px-10 py-5 rounded-full font-bold text-lg md:text-xl transition-all duration-300 ease-out hover:bg-black hover:scale-105 mx-auto">
+          <button
+            data-calendly-trigger="true"
+            className="bg-[#171717] text-white px-10 py-5 rounded-full font-bold text-lg md:text-xl transition-all duration-300 ease-out hover:bg-black hover:scale-105 mx-auto"
+          >
             Book a Strategy Call
           </button>
           <p className="text-sm font-semibold text-gray-500 uppercase tracking-widest mt-6">

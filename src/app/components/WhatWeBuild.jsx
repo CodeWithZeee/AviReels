@@ -93,7 +93,10 @@ export default function WhatWeBuild() {
 
         {/* CTA */}
         <motion.div variants={fadeUp} className="mt-24 flex justify-center">
-          <button className="bg-white text-[#111111] px-10 py-5 rounded-full font-bold text-lg md:text-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(255,255,255,0.15)] active:scale-95 group flex items-center gap-3">
+          <button
+            data-calendly-trigger="true"
+            className="bg-white text-[#111111] px-10 py-5 rounded-full font-bold text-lg md:text-xl transition-all duration-300 hover:-translate-y-1 hover:shadow-[0_20px_40px_rgba(255,255,255,0.15)] active:scale-95 group flex items-center gap-3"
+          >
             Book a Strategy Call
             <svg className="w-5 h-5 group-hover:translate-x-1.5 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />

@@ -7,44 +7,43 @@ import { Plus } from "lucide-react";
 const accordionData = [
   {
     id: 1,
-    title: "Can audiences tell it is AI?",
-    content: "No. Real samples of our work come first. You see the actual output and decide for yourself."
+    title: "Can people tell it's AI?",
+    content: "No. The work speaks first. You see the output and decide for yourself."
   },
   {
     id: 2,
     title: "What avatars can you build?",
-    content: "Any avatar you need. Built from your photos or footage, your client's likeness, or created entirely from scratch in any age, gender, race, or ethnicity."
+    content: "Your face, your founder, your brand, or fully custom AI humans built entirely from scratch."
   },
   {
     id: 3,
-    title: "What formats do you produce?",
-    content: "Meta ad creatives, Instagram Reels, YouTube Shorts, video sales letters, and long-form content. Volume and format are scoped per engagement."
+    title: "What can you produce?",
+    content: "Meta ads, personal brands, VSLs, UGC-style creatives, and long-form content."
   },
   {
     id: 4,
-    title: "What is included?",
-    content: "Everything from brief to delivery. Script, avatar, editing, and formatting. You receive finished assets. You do not manage the process."
+    title: "What's included?",
+    content: "Everything from brief to delivery. Strategy, scripting, avatars, editing, and formatting handled end-to-end."
   },
   {
     id: 5,
     title: "How does pricing work?",
-    content: "Every engagement is scoped to your goals and volume. No public pricing. Book a call and get a complete picture of exactly what gets built for you and what it costs."
+    content: "Every engagement is scoped around your goals, production needs, and content volume. Book a call to see exactly what gets built and what it costs."
   },
   {
     id: 6,
     title: "How fast is delivery?",
-    content: "Under 24 hours from brief approval to finished creative. That is the standard, not a ceiling."
+    content: "Under 24 hours from approved brief to finished assets. That is the standard, not the ceiling."
   },
   {
     id: 7,
-    title: "What is the commitment?",
-    content: "It starts with a 30-day pilot. No long-term contract until the results speak for themselves."
+    title: "Is there a long-term commitment?",
+    content: "Every engagement starts with a 30-day pilot. No long-term commitment until the results speak for themselves."
   }
 ];
 
 export default function Accordion() {
   const [activeId, setActiveId] = useState(null);
-
   const toggleAccordion = (id) => {
     setActiveId(activeId === id ? null : id);
   };

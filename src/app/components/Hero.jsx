@@ -1,6 +1,7 @@
 "use client";
 
 import { motion } from "framer-motion";
+import PremiumPhoneMockup from "./ui/PremiumPhoneMockup";
 
 export default function Hero() {
   const fadeUp = {
@@ -57,7 +58,10 @@ export default function Hero() {
               variants={fadeUp}
               className="flex flex-col sm:flex-row items-center justify-center lg:justify-start gap-4 pt-6"
             >
-              <button className="relative overflow-hidden bg-[#111111] text-white px-8 py-4 md:py-5 rounded-full font-bold clash tracking-wide text-lg sm:text-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] group flex items-center justify-center w-full sm:w-auto shadow-md border border-black/10">
+              <button
+                data-calendly-trigger="true"
+                className="relative overflow-hidden bg-[#111111] text-white px-8 py-4 md:py-5 rounded-full font-bold clash tracking-wide text-lg sm:text-xl transition-all duration-300 ease-out hover:-translate-y-1 hover:scale-[1.02] hover:shadow-[0_20px_40px_rgba(0,0,0,0.2)] group flex items-center justify-center w-full sm:w-auto shadow-md border border-black/10"
+              >
                 <div className="absolute inset-0 bg-gradient-to-br from-[#f5c842]/20 to-[#e8821e]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                 <span className="relative z-10 flex items-center justify-center gap-3">
                   Book a Strategy Call
@@ -74,44 +78,7 @@ export default function Hero() {
 
           {/* Right Column: Large Vertical Mobile Phone Mockup */}
           <div className="lg:col-span-5 flex justify-center lg:justify-end relative z-10 order-1 lg:order-2">
-            {/* Phone Container Wrapper */}
-            <div className="relative mx-auto lg:mr-0 group">
-              {/* Phone Buttons (Physical keys) */}
-              <div className="absolute -left-[10px] sm:-left-[14px] top-24 w-[2px] sm:w-[3px] h-8 bg-neutral-800 rounded-l-md" />
-              <div className="absolute -left-[10px] sm:-left-[14px] top-36 w-[2px] sm:w-[3px] h-8 bg-neutral-800 rounded-l-md" />
-              <div className="absolute -right-[10px] sm:-right-[14px] top-28 w-[2px] sm:w-[3px] h-12 bg-neutral-800 rounded-r-md" />
-
-              {/* Main Phone Body (Enlarged) */}
-              <motion.div 
-                variants={fadeUp} 
-                className="w-[280px] xs:w-[320px] sm:w-[360px] md:w-[400px] lg:w-[380px] xl:w-[420px] aspect-[9/16] relative rounded-[2.5rem] sm:rounded-[3.2rem] border-[10px] sm:border-[14px] border-neutral-950 bg-black shadow-[0_30px_70px_-15px_rgba(0,0,0,0.4)] overflow-hidden flex items-center justify-center"
-              >
-                {/* Dynamic Island / Notch */}
-                <div className="absolute top-3 left-1/2 -translate-x-1/2 w-20 sm:w-24 h-4 sm:h-4.5 bg-neutral-950 rounded-full z-20 pointer-events-none" />
-
-                {/* Speaker Grill Detail inside Notch */}
-                <div className="absolute top-1 left-1/2 -translate-x-1/2 w-8 h-[1px] bg-neutral-800 z-30 pointer-events-none" />
-
-                {/* Reflection Highlight / Glass Glare */}
-                <div className="absolute inset-0 bg-gradient-to-tr from-white/0 via-white/5 to-white/10 pointer-events-none z-20" />
-
-                {/* Fallback placeholder (visible if video loads slowly or fails) */}
-                <div className="absolute inset-0 bg-neutral-900 z-0 flex items-center justify-center" />
-                <span className="text-white/20 font-bold clash tracking-[0.2em] uppercase text-[10px] sm:text-xs text-center px-4 absolute z-0 leading-relaxed">
-                  Loading Demo...
-                </span>
-                
-                {/* Actual Video compilation */}
-                <video 
-                  autoPlay 
-                  loop 
-                  muted 
-                  playsInline 
-                  className="absolute inset-0 w-full h-full object-cover z-10"
-                  src="/videos/MobileVideo.mp4" 
-                />
-              </motion.div>
-            </div>
+            <PremiumPhoneMockup videoSrc="/videos/MobileVideo.mp4" />
           </div>
         </motion.div>
       </div>

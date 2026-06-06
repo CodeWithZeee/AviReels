@@ -3,6 +3,7 @@
 import React from "react";
 import { motion } from "framer-motion";
 import Image from "next/image";
+import Link from "next/link";
 
 const ClientResult = () => {
   const fadeUp = {
@@ -45,15 +46,19 @@ const ClientResult = () => {
             </p>
           </div>
           
-          {/* Raw Screenshot */}
-          <div className="w-full max-w-lg mx-auto mb-10">
-            <Image src="/3_Astrix.jpg" alt="Elevate VSLs Reaction" width={800} height={400} className="w-full" />
-          </div>
-
-          <div className="flex justify-center">
-            <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:bg-black hover:scale-[1.02] active:scale-95">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6">
+            <button
+              data-calendly-trigger="true"
+              className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:bg-black hover:scale-[1.02] active:scale-95 w-full sm:w-auto text-center"
+            >
               Book a Strategy Call
             </button>
+            <Link
+              href="/results"
+              className="bg-white border-2 border-black/10 text-gray-900 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:border-black hover:scale-[1.02] active:scale-95 w-full sm:w-auto text-center flex items-center justify-center"
+            >
+              See Real Results
+            </Link>
           </div>
         </motion.div>
 
@@ -68,23 +73,19 @@ const ClientResult = () => {
             </p>
           </div>
           
-          {/* Raw Screenshots */}
-          <div className="flex items-center gap-8 mb-10">
-            <div className="w-full max-w-lg">
-              <Image src="/2_Brandon.jpg" alt="Brandon Reaction" width={800} height={400} className="w-full h-auto" />
-            </div>
-            <div className="w-full max-w-lg">
-              <Image src="/1_Jake.jpg" alt="Jake Reaction" width={800} height={400} className="w-full h-auto" />
-            </div>
-            <div className="w-full max-w-lg">
-              <Image src="/5_Natalei.jpg" alt="Natalie Reaction" width={800} height={400} className="w-full h-auto" />
-            </div>
-          </div>
-
-          <div className="flex justify-center">
-            <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:bg-black hover:scale-[1.02] active:scale-95">
+          <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-6">
+            <button
+              data-calendly-trigger="true"
+              className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:bg-black hover:scale-[1.02] active:scale-95 w-full sm:w-auto text-center"
+            >
               Book a Strategy Call
             </button>
+            <Link
+              href="/results"
+              className="bg-white border-2 border-black/10 text-gray-900 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:border-black hover:scale-[1.02] active:scale-95 w-full sm:w-auto text-center flex items-center justify-center"
+            >
+              See Real Results
+            </Link>
           </div>
         </motion.div>
 

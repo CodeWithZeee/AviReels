@@ -2,6 +2,7 @@ import "./globals.css";
 import localFont from "next/font/local";
 import Navbar from "./components/Navbar";
 import LenisProvider from "./components/LenisProvider.tsx";
+import CalendlyProvider from "./components/CalendlyProvider";
 import { Inter } from "next/font/google";
 
 export const metadata = {
@@ -26,14 +27,21 @@ export default function RootLayout({ children }) {
           href="https://api.fontshare.com/v2/css?f[]=clash-display@400,500,600,700&display=swap"
           rel="stylesheet"
         />
+        <link
+          rel="stylesheet"
+          href="https://assets.calendly.com/assets/external/widget.css"
+        />
       </head>
       <body>
         <LenisProvider>
-          <Navbar />
-          {children}
-          {/* <Footer /> */}
+          <CalendlyProvider>
+            <Navbar />
+            {children}
+            {/* <Footer /> */}
+          </CalendlyProvider>
         </LenisProvider>
       </body>
     </html>
   );
 }
+

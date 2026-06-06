@@ -61,6 +61,7 @@ export default function AboutPage() {
             <FadeUp delay={0.4} className="flex flex-col sm:flex-row items-center gap-4">
               <Link 
                 href="/booking" 
+                data-calendly-trigger="true"
                 className="w-full sm:w-auto px-8 py-4 bg-gray-900 text-white rounded-full font-medium flex items-center justify-center gap-2 hover:bg-gray-800 transition-all duration-300 shadow-xl shadow-gray-900/20 hover:shadow-gray-900/30 hover:-translate-y-0.5"
               >
                 Book a Strategy Call
@@ -90,7 +91,7 @@ export default function AboutPage() {
                 {/* Abstract Avatar Rep */}
                 <div className="w-32 h-32 rounded-full border-2 border-gray-200 bg-white shadow-xl flex items-center justify-center relative z-10">
                   <div className="w-24 h-24 rounded-full border border-gray-100 bg-gray-50 flex items-center justify-center">
-                    <Activity className="w-8 h-8 text-gray-400" />
+                    <img src="logo.png" alt="" />
                   </div>
                 </div>
                 <div className="mt-8 space-y-3 w-full max-w-xs relative z-10">
@@ -325,6 +326,7 @@ export default function AboutPage() {
           <FadeUp delay={0.3} className="flex flex-col items-center">
             <Link 
               href="/booking" 
+              data-calendly-trigger="true"
               className="px-10 py-5 bg-gray-900 text-white rounded-full font-medium text-lg flex items-center gap-3 hover:bg-gray-800 transition-all duration-300 shadow-2xl shadow-gray-900/20 hover:shadow-gray-900/30 hover:-translate-y-1 group"
             >
               Book a Strategy Call

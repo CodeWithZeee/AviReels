@@ -73,7 +73,10 @@ export default function HowWeWork() {
         </div>
 
         <motion.div variants={fadeUp} className="text-center mt-20">
-          <button className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 hover:bg-black hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_rgba(0,0,0,0.1)]">
+          <button
+            data-calendly-trigger="true"
+            className="bg-[#171717] text-white px-8 py-4 rounded-full font-bold text-lg md:text-xl transition-all duration-300 hover:bg-black hover:scale-[1.02] active:scale-95 shadow-[0_10px_20px_rgba(0,0,0,0.1)]"
+          >
             Book a Strategy Call
           </button>
         </motion.div>

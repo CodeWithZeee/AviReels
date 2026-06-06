@@ -2,10 +2,12 @@
 import React, { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const pathname = usePathname();
 
   const NavbarLinks = [
     {
@@ -56,19 +58,25 @@ const Navbar = () => {
 
           {/* Desktop Navigation */}
           <ul className="hidden lg:flex flex-1 min-w-0 items-center justify-center gap-4 xl:gap-8 px-3 xl:px-6">
-            {NavbarLinks.map((link) => (
-              <li className="relative group cursor-pointer shrink-0" key={link.name}>
-                <Link href={link.href}>
-                  <span className="text-[13px] font-bold uppercase tracking-[0.15em] text-gray-500 transition-colors group-hover:text-[#111111] whitespace-nowrap">
-                    {link.name}
-                  </span>
-                </Link>
-              </li>
-            ))}
+            {NavbarLinks.map((link) => {
+              const isActive = pathname === link.href;
+              return (
+                <li className="relative group cursor-pointer shrink-0" key={link.name}>
+                  <Link href={link.href}>
+                    <span className={`text-[13px] font-bold uppercase tracking-[0.15em] transition-colors whitespace-nowrap ${isActive ? 'text-[#111111]' : 'text-gray-500 group-hover:text-[#111111]'}`}>
+                      {link.name}
+                    </span>
+                    {/* Stay visible active line indicator */}
+                    <span className={`absolute left-0 -bottom-1 h-0.5 bg-[#111111] transition-all duration-300 origin-left ${isActive ? 'w-4/5 scale-x-100' : 'w-4/5 scale-x-0 group-hover:scale-x-100'}`} />
+                  </Link>
+                </li>
+              );
+            })}
           </ul>
 
           {/* Button - Book a call */}
           <button
+            data-calendly-trigger="true"
             className="hidden lg:flex shrink-0 bg-[#111111] text-white px-7 py-3.5 rounded-full text-[13px] font-bold uppercase tracking-widest transition-all duration-300 ease-out border border-black/10 hover:bg-black hover:scale-105 hover:shadow-[0_10px_20px_rgba(0,0,0,0.1)] active:scale-95 items-center justify-center whitespace-nowrap"
           >
             Book a Strategy Call
@@ -111,17 +119,24 @@ const Navbar = () => {
           }`}
       >
         <ul className="flex flex-col p-4 space-y-2">
-          {NavbarLinks.map((link) => (
-            <li key={link.name}>
-              <Link
-                href={link.href}
-                onClick={() => setIsMenuOpen(false)}
-                className="block px-4 py-4 text-[#111111] font-bold uppercase tracking-widest text-[13px] hover:bg-black/5 rounded-xl transition-colors"
-              >
-                {link.name}
-              </Link>
-            </li>
-          ))}
+          {NavbarLinks.map((link) => {
+            const isActive = pathname === link.href;
+            return (
+              <li key={link.name}>
+                <Link
+                  href={link.href}
+                  onClick={() => setIsMenuOpen(false)}
+                  className={`block px-4 py-4 font-bold uppercase tracking-widest text-[13px] rounded-xl transition-all duration-300 ${
+                    isActive 
+                      ? "bg-black/5 text-[#111111] border-l-4 border-black pl-3" 
+                      : "text-gray-500 hover:text-[#111111] hover:bg-black/5 pl-4"
+                  }`}
+                >
+                  {link.name}
+                </Link>
+              </li>
+            );
+          })}
         </ul>
       </div>
 

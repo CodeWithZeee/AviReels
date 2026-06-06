@@ -364,6 +364,7 @@ export default function PrivacyPolicyPage() {
           <FadeUp delay={0.2} className="flex justify-center">
             <Link 
               href="/booking" 
+              data-calendly-trigger="true"
               className="px-8 py-4 bg-gray-900 text-white rounded-full font-medium text-lg flex items-center gap-3 hover:bg-gray-800 transition-all duration-300 shadow-xl shadow-gray-900/10 hover:shadow-gray-900/20 hover:-translate-y-0.5 group"
             >
               Book a Strategy Call
