@@ -115,7 +115,9 @@ export default function Comparison() {
             <div className="w-full md:w-1/2">
               <h4 className="text-sm font-bold text-gray-400 clash mb-4 uppercase tracking-widest text-center">Typical AI Avatar</h4>
               <div className="aspect-video bg-neutral-900 rounded-2xl flex items-center justify-center relative overflow-hidden group shadow-md border border-black/5 max-w-[480px] mx-auto w-full">
-                <span className="text-white/20 text-xs font-bold tracking-widest uppercase absolute z-0">Loading...</span>
+                <div className="absolute inset-0 flex items-center justify-center z-0">
+                  <span className="text-white/20 text-xs font-bold tracking-widest uppercase">Loading...</span>
+                </div>
                 <video 
                   autoPlay 
                   loop 
@@ -134,7 +136,9 @@ export default function Comparison() {
             <div className="w-full md:w-1/2">
               <h4 className="text-sm font-bold text-[#111111] clash mb-4 uppercase tracking-widest text-center">AviReels</h4>
               <div className="aspect-video bg-neutral-900 rounded-2xl flex items-center justify-center relative overflow-hidden group shadow-md border border-black/5 max-w-[480px] mx-auto w-full">
-                <span className="text-white/20 text-xs font-bold tracking-widest uppercase absolute z-0">Loading...</span>
+                <div className="absolute inset-0 flex items-center justify-center z-0">
+                  <span className="text-white/20 text-xs font-bold tracking-widest uppercase">Loading...</span>
+                </div>
                 <video 
                   autoPlay 
                   loop 

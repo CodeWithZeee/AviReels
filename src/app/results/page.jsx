@@ -115,6 +115,7 @@ export default function ResultsPage() {
 
   const cases = [
     {
+      category: "personal",
       label: "YouTube · Entertainment",
       title: "Monetized in 75 Days. 60 Million Views.",
       body: "AviReels built the content engine behind Forged Fury from scratch. The industry standard for YouTube monetization is 6 to 12 months. It happened in under 75 days. Then the channel kept growing.",
@@ -132,6 +133,7 @@ export default function ResultsPage() {
       ],
     },
     {
+      category: "agency",
       label: "Meta Ads · High-Ticket Agency",
       title: "6 AI Videos. Multiple 7-Figure Clients Booked.",
       body: "CyberSphere is an agency that operates at the top end of the market, working with million-dollar clients. AviReels produced over 6 Meta AI video ads for their campaigns. Those creatives directly resulted in multiple 7-figure client engagements booked.",
@@ -148,6 +150,7 @@ export default function ResultsPage() {
       ],
     },
     {
+      category: "ads",
       label: "Meta Ads · Lead Generation",
       title: "2 Videos. Hundreds of Calls. 2 Months.",
       body: "AviReels produced 2 AI avatar video ads for Astrix Digital Media's Meta campaigns. Within 2 months of going live, those two creatives alone drove a high volume of inbound calls booked directly through Meta.",
@@ -164,6 +167,7 @@ export default function ResultsPage() {
       ],
     },
     {
+      category: "personal",
       label: "Instagram · AI Education",
       title: "7.73 Million Organic Views. Zero Spend.",
       body: "AviReels built the content system behind every video from zero. No paid promotion. No shoutouts. Just consistent output that kept performing in a competitive, fast-moving niche.",
@@ -178,6 +182,7 @@ export default function ResultsPage() {
       ],
     },
     {
+      category: "ads",
       label: "VSL · Conversion Funnel",
       title: "$3,700 in Sales. One Video. Day One.",
       body: "The goal was not views. It was revenue. AviReels produced the AI avatar VSL that went directly into the sales funnel and generated measurable results from the moment it went live.",
@@ -192,6 +197,7 @@ export default function ResultsPage() {
       ],
     },
     {
+      category: "agency",
       label: "AI Video Production · Automotive",
       title: "High Standards. Repeat Every Time.",
       body: "AviReels handled production for PTIQCS across multiple engagements. A US automotive company does not come back if the quality slips. Technical, demanding, and high stakes. PTIQCS came back every time because the output held up.",
@@ -205,6 +211,29 @@ export default function ResultsPage() {
       ],
     },
   ];
+
+  const [activeFilter, setActiveFilter] = useState("all");
+
+  useEffect(() => {
+    if (typeof window !== "undefined") {
+      const params = new URLSearchParams(window.location.search);
+      const filter = params.get("filter");
+      if (filter && ["ads", "personal", "agency"].includes(filter)) {
+        setActiveFilter(filter);
+      }
+    }
+  }, []);
+
+  const filters = [
+    { id: "all", label: "All Cases" },
+    { id: "ads", label: "Paid Ads" },
+    { id: "personal", label: "Personal Brands" },
+    { id: "agency", label: "Agencies & Client Work" },
+  ];
+
+  const filteredCases = cases.filter(
+    (c) => activeFilter === "all" || c.category === activeFilter
+  );
 
   return (
     <div className="bg-[#F4F2EC] min-h-screen pt-32 pb-20 overflow-hidden text-[#111111]">
@@ -280,9 +309,26 @@ export default function ResultsPage() {
         </div>
       </motion.section>
 
+      {/* FILTER TABS */}
+      <div className="max-w-6xl mx-auto px-6 mb-20 flex flex-wrap justify-center gap-3">
+        {filters.map((f) => (
+          <button
+            key={f.id}
+            onClick={() => setActiveFilter(f.id)}
+            className={`px-6 py-3 rounded-full text-sm font-semibold transition-all duration-300 ${
+              activeFilter === f.id
+                ? "bg-[#171717] text-white shadow-md scale-[1.02]"
+                : "bg-white border border-black/10 text-gray-700 hover:border-black/30"
+            }`}
+          >
+            {f.label}
+          </button>
+        ))}
+      </div>
+
       {/* 3-8. CASE STUDIES */}
       <div className="max-w-6xl mx-auto px-6 mb-32 space-y-40">
-        {cases.map((c, idx) => (
+        {filteredCases.map((c, idx) => (
           <motion.section
             key={idx}
             className="grid lg:grid-cols-12 gap-12 lg:gap-20 relative"

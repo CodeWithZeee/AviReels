@@ -107,10 +107,11 @@ export default function PremiumPhoneMockup({ videoSrc }) {
             {/* 3. Screen Content Frame */}
             <div className="absolute inset-0 w-full h-full bg-black z-10 rounded-[2.1rem] overflow-hidden">
               {/* Video Loading Placeholder */}
-              <div className="absolute inset-0 bg-neutral-900 z-0 flex items-center justify-center" />
-              <span className="text-white/20 font-bold clash tracking-[0.2em] uppercase text-[10px] sm:text-xs text-center px-4 absolute z-0 leading-relaxed">
-                Loading Demo...
-              </span>
+              <div className="absolute inset-0 bg-neutral-900 z-0 flex items-center justify-center">
+                <span className="text-white/20 font-bold clash tracking-[0.2em] uppercase text-[10px] sm:text-xs text-center px-4 leading-relaxed">
+                  Loading Demo...
+                </span>
+              </div>
 
               {/* High-Fidelity Comp Video */}
               {videoSrc && (
