@@ -2,6 +2,7 @@
 
 import { useEffect, useRef, useState } from "react";
 import { motion, useInView, useMotionValue, useSpring } from "framer-motion";
+import Link from "next/link";
 
 function AnimatedCounter({
   value,
@@ -202,9 +203,12 @@ export default function StatWall() {
         </div>
 
         <motion.div variants={fadeUp} className="mt-20 text-center">
-          <button className="bg-transparent text-gray-900 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ease-out border-2 border-black/10 hover:border-[#171717] hover:bg-[#171717]/5 active:scale-95">
+          <Link
+            href="/results"
+            className="inline-block bg-transparent text-gray-900 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 ease-out border-2 border-black/10 hover:border-[#171717] hover:bg-[#171717]/5 active:scale-95"
+          >
             See Full Results
-          </button>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

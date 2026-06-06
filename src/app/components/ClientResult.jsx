@@ -101,7 +101,10 @@ const ClientResult = () => {
           </div>
 
           <div className="flex justify-center">
-            <button className="bg-transparent text-gray-900 border-2 border-black/10 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:border-[#171717] hover:bg-[#171717]/5 active:scale-95">
+            <button
+              data-calendly-trigger="true"
+              className="bg-transparent text-gray-900 border-2 border-black/10 px-8 py-4 rounded-full font-bold text-lg transition-all duration-300 hover:border-[#171717] hover:bg-[#171717]/5 active:scale-95"
+            >
               Let's Talk White-Label
             </button>
           </div>
